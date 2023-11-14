@@ -18,7 +18,7 @@ const writingStreak = () => {
 
   if (matchingPost) {
     elements.push(
-     <div key={i} className="rounded bg-green-400 hover:bg-green-300 w-3 h-3 inline-flex px-4 mx-1" title={formattedDate}/>
+     <div key={i} className="rounded bg-green-300 hover:bg-green-400 w-3 h-3 inline-flex px-4 mx-1" title={formattedDate}/>
      )
   } else {
     elements.push(
@@ -33,10 +33,10 @@ export default function Dashboard() {
   return (
     <article className="py-6 prose dark:prose-invert">
         <h1>Dashboard</h1>
-        {format(new Date(), "'Today is a' eeee")}
+        
         <h2>Writing Streak</h2>
         {writingStreak()}
-        <p>You wrote 4 blog posts in the last month. Keep going!</p>
+
       {/* {allPosts.map((post) => (
         <article key={post._id}>
           {post.date && 
