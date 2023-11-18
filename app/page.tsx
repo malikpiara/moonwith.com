@@ -7,7 +7,7 @@ export default function Home() {
       {allPosts.map((post) => (
         <article key={post._id}>
           <Link className="no-underline" href={post.slug}>
-            <h2>{post.title}</h2>
+            <h2 className="text-primary dark:text-secondary">{post.title}</h2>
           </Link>
           {post.description && <p>{post.description}</p>}
         </article>

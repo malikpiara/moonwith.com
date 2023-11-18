@@ -18,11 +18,11 @@ const writingStreak = () => {
 
   if (matchingPost) {
     elements.push(
-     <Link key={i} className="rounded bg-green-300 hover:bg-green-400 w-3 h-3 inline-flex px-4 mx-1" href={matchingPost.slug} title={matchingPost.slug}/>
+     <Link key={i} className="rounded bg-pistachio hover:bg-pistachioDark w-3 h-3 inline-flex px-4 mx-1" href={matchingPost.slug} title={matchingPost.slug}/>
      )
   } else {
     elements.push(
-      <Link key={i} className="rounded bg-gray-200 hover:bg-gray-300 w-3 h-3 inline-flex px-4 mx-1" href={""} title={formattedDate}/>
+      <Link key={i} className="rounded bg-eggshell hover:bg-eggshellDark w-3 h-3 inline-flex px-4 mx-1" href={""} title={formattedDate}/>
       );
   }
  }
@@ -32,10 +32,12 @@ const writingStreak = () => {
 export default function Dashboard() {
   return (
     <article className="py-6 prose dark:prose-invert">
-        <h1>Dashboard</h1>
+        <h1 className="text-primary dark:text-secondary">Malik's Dashboard</h1>
         
-        <h2>Writing Streak</h2>
+        <h2 className="text-primary  dark:text-secondary">Activity Map</h2>
+        <p>Below you can see how many blog posts Malik has written in the last 30 days.</p>
         {writingStreak()}
+       
     </article>
   )
 }
