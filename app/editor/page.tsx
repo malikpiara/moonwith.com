@@ -1,32 +1,32 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, FC } from 'react';
 
-const Editor = () => {
-  const editorRef = useRef(null);
-  const [, setRenderTrigger] = useState({});
+const Editor: FC = () => {
+  const editorRef = useRef<HTMLDivElement>(null);
+  const [, setRenderTrigger] = useState<{}>({});
 
-  const forceUpdate = () => setRenderTrigger({});
+  const forceUpdate = (): void => setRenderTrigger({});
 
-  const getContent = () => editorRef.current?.innerText || '';
+  const getContent = (): string => editorRef.current?.innerText || '';
 
-  const countCharacters = () => getContent().length;
+  const countCharacters = (): number => getContent().length;
 
-  const countWords = () => {
+  const countWords = (): number => {
     const words = getContent().trim().split(/\s+/);
     return words.length;
   };
 
-  const countSentences = () => {
+  const countSentences = (): number => {
     const sentences = getContent().split(/[.!?]/).filter(Boolean);
     return sentences.length;
   };
 
-  const countParagraphs = () => {
+  const countParagraphs = (): number => {
     const paragraphs = getContent().split('\n\n').filter(Boolean);
     return paragraphs.length;
   };
 
-  const countAdverbs = () => {
+  const countAdverbs = (): number => {
     const words = getContent().trim().split(/\s+/);
     const adverbs = words.filter((word) => word.endsWith('ly'));
     return adverbs.length;
