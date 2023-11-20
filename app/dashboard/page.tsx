@@ -44,7 +44,9 @@ const writingStreak = () => {
 export default function Dashboard() {
   return (
     <article className='py-6 prose dark:prose-invert'>
-      <h1 className='text-primary dark:text-secondary'>Open Dashboard</h1>
+      <h1 className='text-primary dark:text-secondary italic'>
+        Open Dashboard
+      </h1>
 
       <div className='bg-white rounded-2xl p-5 dark:bg-primary'>
         <h2 className='text-primary  dark:text-secondary m-0'>Activity Map</h2>
@@ -55,6 +57,16 @@ export default function Dashboard() {
 
         {writingStreak()}
       </div>
+
+      <Link className='no-underline  font-normal' href={'editor'}>
+        <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
+          <h2 className='text-primary  dark:text-secondary m-0'>Hemingway</h2>
+          <p>
+            Like a spellchecker but for style. This is a tool built by Malik to
+            make your writing clear and concise.
+          </p>
+        </div>
+      </Link>
     </article>
   );
 }
