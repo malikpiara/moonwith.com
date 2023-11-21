@@ -27,14 +27,27 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <header>
               <div className='flex items-center justify-between'>
                 <ModeToggle />
-                <nav className='ml-auto font-medium space-x-6'>
-                  <Link href='/'>Home</Link>
-                  <Link href='/about'>About</Link>
+                <nav className='ml-auto font-medium space-x-2'>
+                  <Link
+                    className='opacity-70 p-2 transition-all duration-300 rounded-md hover:opacity-100 hover:bg-eggshell'
+                    href='/'
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    className='opacity-70 p-2 transition-all duration-300 rounded-md hover:opacity-100 hover:bg-eggshell'
+                    href='/about'
+                  >
+                    About
+                  </Link>
                 </nav>
               </div>
             </header>
-            <main>{children}</main>
+            <main className='mt-10'>{children}</main>
           </div>
+          <p className='uppercase text-xs [writing-mode:vertical-lr] rotate-180 sticky bottom-9 tracking-wider mx-3'>
+            Only you know who you can be
+          </p>
           <Analytics />
         </ThemeProvider>
       </body>
