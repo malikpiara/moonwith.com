@@ -48,6 +48,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <p className='uppercase text-xs [writing-mode:vertical-lr] rotate-180 fixed bottom-20 tracking-wider mx-3 hover:text-tertiary max-sm:hidden transition-all duration-300 cursor-default'>
             Only you know who you can be
           </p>
+          <div className='bg-primary h-96 flex border-8 border-secondary dark:border-primary rounded-2xl overflow-hidden max-sm:hidden'>
+            <div className='bg-primary h-[40rem] w-[40rem] m-auto block rounded-full shadow-[inset_21px_2px_70px_rgba(252,249,242)] animate-pulse blur-md  transition-all before:content-[""] relative -bottom-36' />
+          </div>
           <Analytics />
         </ThemeProvider>
       </body>
