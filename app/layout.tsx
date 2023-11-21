@@ -43,9 +43,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 </nav>
               </div>
             </header>
-            <main className='mt-10'>{children}</main>
+            <main className='sm:mt-10'>{children}</main>
           </div>
-          <p className='uppercase text-xs [writing-mode:vertical-lr] rotate-180 fixed bottom-9 tracking-wider mx-3'>
+          <p className='uppercase text-xs [writing-mode:vertical-lr] rotate-180 fixed bottom-20 tracking-wider mx-3 hover:text-tertiary max-sm:hidden transition-all duration-300 cursor-default'>
             Only you know who you can be
           </p>
           <Analytics />
