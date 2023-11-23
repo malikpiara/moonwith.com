@@ -63,7 +63,7 @@ export default function Dashboard() {
           <h2 className='text-primary  dark:text-secondary m-0'>Hemingway</h2>
           <p>
             Like a spellchecker but for style. This is a tool built by Malik to
-            make your writing clear and concise.
+            make your writing clear and concise. Work in progress.
           </p>
         </div>
       </Link>
