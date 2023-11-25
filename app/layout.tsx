@@ -20,7 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
       <body
-        className={`antialiased min-h-screen bg-secondary dark:bg-primary text-primary dark:text-secondary ${inter.className}`}
+        className={`antialiased min-h-screen bg-secondary dark:bg-primary text-primary dark:text-gray ${inter.className}`}
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <div className='max-w-2xl mx-auto py-10 px-4'>

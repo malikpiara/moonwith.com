@@ -14,7 +14,9 @@ export default function Home() {
               {post.title}
             </h2>
           </Link>
-          {post.description && <p>{post.description}</p>}
+          {post.description && (
+            <p className='dark:text-gray'>{post.description}</p>
+          )}
         </article>
       ))}
     </div>

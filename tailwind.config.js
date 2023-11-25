@@ -16,6 +16,7 @@ module.exports = {
         pistachioDark: '#C3E5A1',
         eggshell: '#EBE9E2',
         eggshellDark: '#CECCC6',
+        gray: '#8295BA',
       },
     },
   },
