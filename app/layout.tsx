@@ -24,21 +24,27 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <div className='max-w-2xl mx-auto py-10 px-4'>
-            <header>
+            <header className='flex bg-tertiary w-full absolute left-0 top-0 flex-wrap opacity-80 text-primary'>
               <div className='flex items-center justify-between'>
                 <ModeToggle />
-                <nav className='ml-auto font-medium space-x-2'>
+                <nav className='ml-auto font-medium space-x-1'>
                   <Link
-                    className='opacity-70 p-2 transition-all duration-300 rounded-md hover:opacity-100 hover:bg-eggshell'
+                    className='opacity-80 p-2 transition-all duration-300 hover:opacity-100'
                     href='/'
                   >
                     Home
                   </Link>
                   <Link
-                    className='opacity-70 p-2 transition-all duration-300 rounded-md hover:opacity-100 hover:bg-eggshell'
+                    className='opacity-80 p-2 transition-all duration-300 hover:opacity-100'
                     href='/about'
                   >
                     About
+                  </Link>
+                  <Link
+                    className='opacity-80 p-2 transition-all duration-300 hover:opacity-100'
+                    href='/contact'
+                  >
+                    Get in touch
                   </Link>
                 </nav>
               </div>
