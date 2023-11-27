@@ -60,7 +60,9 @@ export default function Dashboard() {
 
       <Link className='no-underline  font-normal' href={'editor'}>
         <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
-          <h2 className='text-primary  dark:text-secondary m-0'>Hemingway</h2>
+          <h2 className='text-primary  dark:text-secondary m-0'>
+            Mercury Text Editor
+          </h2>
           <p>
             Like a spellchecker but for style. This is a tool built by Malik to
             make your writing clear and concise. Work in progress.

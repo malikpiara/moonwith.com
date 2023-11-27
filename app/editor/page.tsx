@@ -34,9 +34,7 @@ const Editor: FC = () => {
 
   return (
     <main className='py-6 prose dark:prose-invert'>
-      <h1 className='text-primary dark:text-secondary italic'>
-        Hemingway. A stylechecker
-      </h1>
+      <h1 className='text-primary dark:text-secondary italic'>Mercury</h1>
 
       <div
         ref={editorRef}
@@ -62,6 +60,14 @@ const Editor: FC = () => {
           <span className='font-bold'>Adverbs:</span> {countAdverbs()}
         </p>
       </div>
+      {countAdverbs() >= 2 && (
+        <div className='bg-tertiary w-fit rounded transition ease-in-out duration-300 px-3 dark:text-primary'>
+          <p className=' font-semibold'>
+            Aim for 1 or fewer adverbs to make your writing crisp.
+          </p>
+          <p>&quot;He ran quickly&quot; becomes &quot;He sprinted&quot;.</p>
+        </div>
+      )}
     </main>
   );
 };
