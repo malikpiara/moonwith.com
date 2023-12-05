@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { format, subDays } from 'date-fns';
 
 const currentDateTime = new Date();
-let LastThirtyDays = subDays(currentDateTime, -1);
+let LastThirtyDays = subDays(currentDateTime, 1);
 
 const writingStreak = () => {
   let days = 30;
