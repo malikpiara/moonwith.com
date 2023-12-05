@@ -42,9 +42,21 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   </Link>
                   <Link
                     className='opacity-80 p-2 transition-all duration-300 hover:opacity-100'
+                    href='/projects'
+                  >
+                    Work
+                  </Link>
+                  <Link
+                    className='opacity-80 p-2 transition-all duration-300 hover:opacity-100'
                     href='/dashboard'
                   >
                     Software
+                  </Link>
+                  <Link
+                    className='opacity-80 p-2 transition-all duration-300 hover:opacity-100'
+                    href='/friends'
+                  >
+                    Friends
                   </Link>
                   <Link
                     className='opacity-80 p-2 transition-all duration-300 hover:opacity-100'
