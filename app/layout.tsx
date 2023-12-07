@@ -19,7 +19,7 @@ export const metadata = {
   ],
   publisher: 'Malik Piara',
   openGraph: {
-    images: '/malik-mini.jpg',
+    images: '/malik_mini.jpeg',
     authors: ['Malik'],
   },
   icons: {
