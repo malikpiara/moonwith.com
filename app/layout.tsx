@@ -8,8 +8,23 @@ import { ModeToggle } from '@/components/mode-toggle';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Moonwith Hex',
+  title: 'Moonwith',
   description: "Malik's Digital Home",
+  creator: 'Malik Piara',
+  keywords: [
+    'personal blog',
+    'daily blog',
+    'product management',
+    'product enablement',
+  ],
+  publisher: 'Malik Piara',
+  openGraph: {
+    images: '/malik-mini.jpg',
+    authors: ['Malik'],
+  },
+  icons: {
+    icon: '/next.svg',
+  },
 };
 
 interface RootLayoutProps {
