@@ -13,11 +13,15 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <Navbar />
-      <button onMouseOver={() => console.log('Mouse over!')}>
-        Test Button
-      </button>
-      <main className='flex'>{children}</main>
+      <body
+        className={`antialiased min-h-screen bg-white dark:bg-primary text-primary dark:text-slate ${inter.className}`}
+      >
+        <Navbar />
+        <button onMouseOver={() => console.log('Mouse over!')}>
+          Test Button
+        </button>
+        <main className='flex'>{children}</main>
+      </body>
     </>
   );
 }
