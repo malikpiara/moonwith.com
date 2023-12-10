@@ -3,6 +3,7 @@ import '../../globals.css';
 import { Inter } from 'next/font/google';
 import { Navbar } from '@/components/logicola/navbar';
 import { Header } from '@/components/logicola/header';
+import { Sidebar } from '@/components/logicola/sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     >
       <Navbar />
       <Header />
+      <main className='sm:mt-10'>{children}</main>
     </body>
   );
 }
