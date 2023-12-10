@@ -4,6 +4,7 @@ module.exports = {
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./content/**/*.{md,mdx}",
+    "./node_modules/flowbite/**/*.js",
   ],
   darkMode: ["class"],
   theme: {
@@ -20,5 +21,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require('flowbite/plugin')
+  ],
 }
