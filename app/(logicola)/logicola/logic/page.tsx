@@ -7,8 +7,8 @@ export default function Logic() {
       <div className='flex w-full h-screen overflow-scroll'>
         <Sidebar />
         <div className='p-4 w-full'>
-          <TableOfContent />
-          <TableOfContent />
+          <TableOfContent chapter={6} />
+          <TableOfContent chapter={7} />
         </div>
       </div>
     </>

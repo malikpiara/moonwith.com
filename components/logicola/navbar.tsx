@@ -116,7 +116,7 @@ const Navbar = () => {
             <li>
               <a
                 href='/logicola/logic'
-                className='block p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700'
+                className='block p-3 rounded-lg hover:bg-slate-100 opacity-30 cursor-not-allowed'
               >
                 <div className='font-semibold'>Quantificational Logic</div>
                 <span className='text-sm text-slate-500 dark:text-slate-400'>
@@ -129,23 +129,19 @@ const Navbar = () => {
             <li>
               <a
                 href='/logicola/logic'
-                className='block p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700'
+                className='block p-3 rounded-lg hover:bg-slate-100'
               >
                 <div className='font-semibold'>Propositional Proofs</div>
-                <span className='text-sm text-slate-500 dark:text-slate-400'>
-                  Chapter 7
-                </span>
+                <span className='text-sm text-slate-500'>Chapter 7</span>
               </a>
             </li>
             <li>
               <a
                 href='/logicola/logic'
-                className='block p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700'
+                className='block p-3 rounded-lg hover:bg-slate-100 opacity-30 cursor-not-allowed'
               >
                 <div className='font-semibold'>Relations and Identity</div>
-                <span className='text-sm text-slate-500 dark:text-slate-400'>
-                  Chapter 9
-                </span>
+                <span className='text-sm text-slate-500'>Chapter 9</span>
               </a>
             </li>
           </ul>
