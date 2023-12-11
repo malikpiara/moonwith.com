@@ -21,7 +21,7 @@ const Navbar = () => {
           </span>
         </a>
         <button onMouseOver={() => console.log('Mouse over!')}>
-          Toggle Menu
+          Mouse Over
         </button>
 
         <button
