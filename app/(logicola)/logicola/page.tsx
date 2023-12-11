@@ -3,7 +3,7 @@ import { Header } from '@/components/logicola/header';
 export default function Logicola() {
   return (
     <>
-      <div className='flex flex-col'>
+      <div className='flex flex-col m-auto'>
         <Header />
         <div className='p-4 w-full'>
           <div className='p-4 border-2 border-slate-200 border-dashed rounded-lg dark:border-slate-700'>
@@ -19,9 +19,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -38,9 +38,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -57,9 +57,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -77,9 +77,9 @@ export default function Logicola() {
                 >
                   <path
                     stroke='currentColor'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
                     d='M9 1v16M1 9h16'
                   />
                 </svg>
@@ -97,9 +97,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -116,9 +116,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -135,9 +135,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -154,9 +154,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -174,9 +174,9 @@ export default function Logicola() {
                 >
                   <path
                     stroke='currentColor'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
                     d='M9 1v16M1 9h16'
                   />
                 </svg>
@@ -194,9 +194,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -213,9 +213,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -232,9 +232,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
@@ -251,9 +251,9 @@ export default function Logicola() {
                   >
                     <path
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M9 1v16M1 9h16'
                     />
                   </svg>
