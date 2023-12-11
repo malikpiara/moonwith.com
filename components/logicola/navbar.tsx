@@ -20,9 +20,6 @@ const Navbar = () => {
             LogiCola
           </span>
         </a>
-        <button onMouseOver={() => console.log('Mouse over!')}>
-          Mouse Over
-        </button>
 
         <button
           type='button'
