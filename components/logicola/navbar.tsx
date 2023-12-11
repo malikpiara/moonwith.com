@@ -27,7 +27,6 @@ const Navbar = () => {
         <button
           type='button'
           className='inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-slate-500 rounded-lg md:hidden hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 dark:focus:ring-slate-600'
-          onClick={toggleMenu}
         >
           <span className='sr-only'>Open main menu</span>
           <svg
@@ -48,9 +47,7 @@ const Navbar = () => {
         </button>
         <div
           id='mega-menu-full'
-          className={`items-center justify-between font-medium ${
-            isMenuOpen ? 'flex' : 'hidden'
-          } w-full md:flex md:w-auto md:order-1`}
+          className={`items-center justify-between font-medium w-full md:flex md:w-auto md:order-1`}
         >
           <ul className='flex flex-col p-4 md:p-0 mt-4 border border-slate-100 rounded-lg bg-slate-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-slate-800 md:dark:bg-slate-900 dark:border-slate-700'>
             <li>
@@ -64,6 +61,8 @@ const Navbar = () => {
             </li>
             <li>
               <button
+                type='button'
+                onClick={toggleMenu}
                 id='mega-menu-full-dropdown-button'
                 data-collapse-toggle='mega-menu-full-dropdown'
                 className='flex items-center justify-between w-full py-2 px-3 text-slate-900 rounded md:w-auto hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-slate-700 dark:hover:text-green-500 md:dark:hover:bg-transparent dark:border-slate-700'
@@ -100,7 +99,9 @@ const Navbar = () => {
       </div>
       <div
         id='mega-menu-full-dropdown'
-        className='mt-1 border-slate-200 shadow-sm bg-slate-50 md:bg-white border-y dark:bg-slate-800 dark:border-slate-600'
+        className={`${
+          isMenuOpen ? 'flex' : 'hidden'
+        } mt-1 border-slate-200 shadow-sm bg-slate-50 md:bg-white border-y dark:bg-slate-800 dark:border-slate-600`}
       >
         <div className='grid max-w-screen-xl px-4 py-5 mx-auto text-slate-900 dark:text-white sm:grid-cols-2 md:px-6'>
           <ul>
