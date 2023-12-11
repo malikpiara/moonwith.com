@@ -85,7 +85,7 @@ const Navbar = () => {
 
             <li>
               <a
-                href='#'
+                href='/contact'
                 className='block py-2 px-3 text-slate-900 rounded hover:bg-slate-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-slate-700 dark:hover:text-green-500 md:dark:hover:bg-transparent dark:border-slate-700'
               >
                 Contact
