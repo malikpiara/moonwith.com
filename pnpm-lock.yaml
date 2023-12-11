@@ -21,8 +21,8 @@ dependencies:
     specifier: ^1.1.1
     version: 1.1.1
   autoprefixer:
-    specifier: 10.4.14
-    version: 10.4.14(postcss@8.4.31)
+    specifier: 10.4.16
+    version: 10.4.16(postcss@8.4.31)
   contentlayer:
     specifier: ^0.3.4
     version: 0.3.4(esbuild@0.19.9)
@@ -1334,8 +1334,8 @@ packages:
       has-symbols: 1.0.3
     dev: false
 
-  /autoprefixer@10.4.14(postcss@8.4.31):
-    resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}
+  /autoprefixer@10.4.16(postcss@8.4.31):
+    resolution: {integrity: sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
