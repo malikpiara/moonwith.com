@@ -62,7 +62,7 @@ const Navbar = () => {
             <li>
               <button
                 type='button'
-                onClick={toggleMenu}
+                onMouseOver={toggleMenu}
                 id='mega-menu-full-dropdown-button'
                 data-collapse-toggle='mega-menu-full-dropdown'
                 className='flex items-center justify-between w-full py-2 px-3 text-slate-900 rounded md:w-auto hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-slate-700 dark:hover:text-green-500 md:dark:hover:bg-transparent dark:border-slate-700'
@@ -100,7 +100,7 @@ const Navbar = () => {
       <div
         id='mega-menu-full-dropdown'
         className={`${
-          isMenuOpen ? 'flex' : 'hidden'
+          !isMenuOpen && 'hidden'
         } mt-1 border-slate-200 shadow-sm bg-slate-50 md:bg-white border-y dark:bg-slate-800 dark:border-slate-600`}
       >
         <div className='grid max-w-screen-xl px-4 py-5 mx-auto text-slate-900 dark:text-white sm:grid-cols-2 md:px-6'>
