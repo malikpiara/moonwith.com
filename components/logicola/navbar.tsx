@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import Logo from './logo';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ const Navbar = () => {
           href='/logicola'
           className='flex items-center space-x-3 rtl:space-x-reverse'
         >
+          <Logo />
           <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
             LogiCola
           </span>
