@@ -1,16 +1,16 @@
 import Link from 'next/link';
 
-type TableOfContentProps = {
-  chapter: number;
+type TopicTableProps = {
+  topic: number;
 };
 
-const TableOfContent = ({ chapter }: TableOfContentProps) => {
+const TopicTable = ({ topic }: TopicTableProps) => {
   return (
     <div className='max-w-7xl p-6 bg-white border border-slate-200 rounded-lg mb-6'>
-      {chapter === 6 ? (
+      {topic === 1 ? (
         <>
           <h3 className='mb-2 text-xl font-bold tracking-tight text-slate-900'>
-            Chapter 6: Basic Propositional Logic
+            Easier Translations (6.1)
           </h3>
           <hr className='h-px my-4 bg-slate-200 border-0'></hr>
           <div className='mx-auto w-full max-w-screen-xl p-4'>
@@ -20,40 +20,40 @@ const TableOfContent = ({ chapter }: TableOfContentProps) => {
                   <ul className='text-slate-500 font-medium'>
                     <li className='mb-4'>
                       <Link
-                        href='/logicola/logic/basic-propositional-logic'
+                        href='#'
                         className='hover:text-green-600 hover:underline'
                       >
-                        Easier Translations
+                        Not Both A and B
                       </Link>
                     </li>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Simple Truth Tables
+                        Both A and either B or C
                       </Link>
                     </li>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Truth Evaluations
+                        Either both A and B or C
                       </Link>
                     </li>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Unknown Truth Evaluations
+                        If A, then B or C
                       </Link>
                     </li>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Complex Truth Tables
+                        If A then B, or C
                       </Link>
                     </li>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        The Truth-table Test
+                        If not A, then either not B or C
                       </Link>
                     </li>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        The Truth-assignment Test
+                        If not A, then either not B or C
                       </Link>
                     </li>
                   </ul>
@@ -62,32 +62,23 @@ const TableOfContent = ({ chapter }: TableOfContentProps) => {
                   <ul className='text-slate-500 font-medium'>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Harder Translations
+                        Either A or B, and C
                       </Link>
                     </li>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Idiomatic Arguments
+                        Either A, or B and C
                       </Link>
                     </li>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        S-Rules
+                        If A then not both not B and not C
                       </Link>
                     </li>
                     <li className='mb-4'>
                       <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        I-Rules
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Mixing S- and I-Rules
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Extended Inferences
+                        If you get an error message, then the disk is bad or it
+                        is a Macintosh disk.
                       </Link>
                     </li>
                   </ul>
@@ -147,4 +138,4 @@ const TableOfContent = ({ chapter }: TableOfContentProps) => {
   );
 };
 
-export default TableOfContent;
+export default TopicTable;
