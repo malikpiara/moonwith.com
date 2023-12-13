@@ -20,7 +20,7 @@ const TopicTable = ({ topic }: TopicTableProps) => {
                   <ul className='text-slate-500 font-medium'>
                     <li className='mb-4'>
                       <Link
-                        href='#'
+                        href='/logicola/logic/basic-propositional-logic/easier-translations'
                         className='hover:text-green-600 hover:underline'
                       >
                         Not Both A and B
@@ -88,51 +88,7 @@ const TopicTable = ({ topic }: TopicTableProps) => {
           </div>
         </>
       ) : (
-        <>
-          <h3 className='mb-2 text-xl font-bold tracking-tight text-slate-900'>
-            Chapter 7: Propositional Proofs
-          </h3>
-          <hr className='h-px my-4 bg-slate-200 border-0'></hr>
-          <div className='mx-auto w-full max-w-screen-xl p-4'>
-            <div className='md:flex md:justify-between'>
-              <div className='grid grid-cols-2 sm:gap-72 sm:grid-cols-2'>
-                <div>
-                  <ul className='text-slate-500 font-medium'>
-                    <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Easier Proofs
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Easier Refutations
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Harder Proofs
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className='text-slate-500 font-medium'>
-                    <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Harder Refutations
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
-                        Other Proof Methods
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
+        <></>
       )}
     </div>
   );
