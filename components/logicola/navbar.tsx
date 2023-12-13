@@ -100,9 +100,9 @@ const Navbar = () => {
         onMouseLeave={toggleMenu}
         className={`${
           !isDropdownVisible && 'hidden'
-        } mt-1 border-slate-200 shadow-sm bg-slate-50 md:bg-white border-y dark:bg-slate-800 dark:border-slate-600`}
+        } border-slate-200 shadow-sm bg-slate-50 md:bg-white absolute w-full z-50`}
       >
-        <div className='grid max-w-screen-xl px-4 py-5 mx-auto text-slate-900 sm:grid-cols-2 md:px-6 absolute z-50 w-full bg-white shadow-sm'>
+        <div className='grid max-w-screen-xl px-4 py-5 mx-auto text-slate-900 sm:grid-cols-2 md:px-6 shadow-sm'>
           <ul>
             <li>
               <a
