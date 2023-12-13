@@ -4,10 +4,10 @@ import { useState } from 'react';
 import Logo from './logo';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setDropdownVisible(!isDropdownVisible);
   };
 
   return (
@@ -45,7 +45,6 @@ const Navbar = () => {
           </svg>
         </button>
         <div
-          id='mega-menu-full'
           className={`items-center justify-between font-medium w-full md:flex md:w-auto md:order-1`}
         >
           <ul className='flex flex-col p-4 md:p-0 mt-4 border border-slate-100 rounded-lg bg-slate-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-slate-800 md:dark:bg-slate-900 dark:border-slate-700'>
@@ -61,7 +60,7 @@ const Navbar = () => {
             <li>
               <button
                 type='button'
-                onMouseOver={toggleMenu}
+                onMouseEnter={toggleMenu}
                 id='mega-menu-full-dropdown-button'
                 data-collapse-toggle='mega-menu-full-dropdown'
                 className='flex items-center justify-between w-full py-2 px-3 text-slate-900 rounded md:w-auto hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-slate-700 dark:hover:text-green-500 md:dark:hover:bg-transparent dark:border-slate-700'
@@ -98,11 +97,12 @@ const Navbar = () => {
       </div>
       <div
         id='mega-menu-full-dropdown'
+        onMouseLeave={toggleMenu}
         className={`${
-          !isMenuOpen && 'hidden'
+          !isDropdownVisible && 'hidden'
         } mt-1 border-slate-200 shadow-sm bg-slate-50 md:bg-white border-y dark:bg-slate-800 dark:border-slate-600`}
       >
-        <div className='grid max-w-screen-xl px-4 py-5 mx-auto text-slate-900 dark:text-white sm:grid-cols-2 md:px-6'>
+        <div className='grid max-w-screen-xl px-4 py-5 mx-auto text-slate-900 sm:grid-cols-2 md:px-6 absolute z-50 w-full bg-white shadow-sm'>
           <ul>
             <li>
               <a
