@@ -1,4 +1,23 @@
+'use client';
+import React, { useState } from 'react';
+import Option from './Option';
+
+const questions = [
+  {
+    options: [
+      { id: 0, label: '~(A Ʌ B)' },
+      { id: 1, label: '~(A · B)' },
+      { id: 2, label: '(~A · ~B)' },
+      { id: 3, label: '(~A Ʌ ~B)' },
+    ],
+    correctId: 1,
+  },
+];
+
 const Exercise = () => {
+  const [question, setQuestion] = React.useState(questions[0]);
+  const [selectedOptionId, setSelectedOptionId] = useState<number | null>(null);
+
   return (
     <div className='max-w-7xl p-6 bg-white border border-slate-200 rounded-lg mb-6'>
       <h3 className='mb-2 text-xl font-bold tracking-tight text-slate-900'>
@@ -11,45 +30,11 @@ const Exercise = () => {
             <div>Not both A and B</div>
           </div>
 
-          <div className='flex items-center border border-slate-200 rounded-lg'>
-            <button className='w-full ps-4 text-green-600  focus:ring-green-500 focus:ring-2'>
-              <div className='flex'>
-                <div className='py-4 ms-2 text-sm font-medium text-slate-600'>
-                  ~(A Ʌ B)
-                </div>
-              </div>
-            </button>
-          </div>
-
-          <div className='flex items-center border border-slate-200 rounded-lg'>
-            <button className='w-full ps-4 text-green-600  focus:ring-green-500 focus:ring-2'>
-              <div className='flex'>
-                <div className='py-4 ms-2 text-sm font-medium text-slate-600'>
-                  ~(A · B)
-                </div>
-              </div>
-            </button>
-          </div>
-
-          <div className='flex items-center border border-slate-200 rounded-lg'>
-            <button className='w-full ps-4 text-green-600  focus:ring-green-500 focus:ring-2'>
-              <div className='flex'>
-                <div className='py-4 ms-2 text-sm font-medium text-slate-600'>
-                  (~A · ~B)
-                </div>
-              </div>
-            </button>
-          </div>
-
-          <div className='flex items-center border border-slate-200 rounded-lg'>
-            <button className='w-full ps-4 text-green-600  focus:ring-green-500 focus:ring-2'>
-              <div className='flex'>
-                <div className='py-4 ms-2 text-sm font-medium text-slate-600'>
-                  (~A Ʌ ~B)
-                </div>
-              </div>
-            </button>
-          </div>
+          {question.options.map((option) => {
+            return (
+              <Option key={option.id} label={option.label} onClick={() => {}} />
+            );
+          })}
         </div>
       </div>
       <hr className='h-px my-4 bg-slate-200 border-0'></hr>
