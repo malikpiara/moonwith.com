@@ -21,6 +21,9 @@ const Navbar = () => {
           <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
             LogiCola
           </span>
+          <span className='bg-slate-100 text-slate-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded'>
+            In Development
+          </span>
         </a>
 
         <button
