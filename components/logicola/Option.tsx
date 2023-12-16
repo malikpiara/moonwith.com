@@ -1,18 +1,30 @@
+import classNames from 'classnames';
+
 export interface OptionProps {
   label: string;
+  isActive: boolean;
+  isCorrect: boolean;
+  showSolution: boolean;
 
   onClick: () => void;
 }
 export default function Option({
   label,
+  isActive,
+  isCorrect,
+  showSolution,
 
   onClick,
 }: OptionProps) {
+  const className = classNames(
+    'w-full ps-4 text-green-600 flex items-center border rounded-lg',
+    !isActive && 'border-slate-200',
+    showSolution && (isCorrect ? 'bg-green-100' : 'bg-red-100'),
+    !showSolution && isActive && 'border-green-500'
+  );
+
   return (
-    <button
-      onClick={onClick}
-      className='w-full ps-4 text-green-600 flex items-center border border-slate-200 rounded-lg focus:ring-green-500 focus:ring-2'
-    >
+    <button onClick={onClick} className={className}>
       <div className='flex'>
         <div className='py-4 ms-2 text-sm font-medium text-slate-600'>
           {label}

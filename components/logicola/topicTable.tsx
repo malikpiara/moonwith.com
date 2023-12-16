@@ -20,14 +20,17 @@ const TopicTable = ({ topic }: TopicTableProps) => {
                   <ul className='text-slate-500 font-medium'>
                     <li className='mb-4'>
                       <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations'
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/1'
                         className='hover:text-green-600 hover:underline'
                       >
                         Not Both A and B
                       </Link>
                     </li>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/2'
+                        className='opacity-30 cursor-not-allowed'
+                      >
                         Both A and either B or C
                       </Link>
                     </li>

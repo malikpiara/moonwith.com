@@ -3,16 +3,22 @@ import React, { useState } from 'react';
 import Option from './Option';
 import { questions } from '@/app/(logicola)/content';
 
-const Exercise = () => {
-  const [questionIdx, setQuestionIdx] = React.useState(0);
+interface ExerciseProps {
+  initialQuestionIdx: number;
+}
+
+const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
+  const [questionIdx, setQuestionIdx] = useState(initialQuestionIdx);
   const [selectedOptionId, setSelectedOptionId] = useState<number | null>(null);
 
   const question = questions[questionIdx];
 
+  const [showSolution, setShowSolution] = useState(false);
+
   return (
     <div className='max-w-7xl p-6 bg-white border border-slate-200 rounded-lg mb-6'>
       <h3 className='mb-2 text-xl font-bold tracking-tight text-slate-900'>
-        1.
+        {questionIdx + 1}.
       </h3>
       <hr className='h-px my-4 bg-slate-200 border-0'></hr>
       <div className='mx-auto w-full max-w-screen-xl p-4'>
@@ -24,6 +30,9 @@ const Exercise = () => {
           {question.options.map((option) => {
             return (
               <Option
+                isActive={option.id === selectedOptionId}
+                isCorrect={option.id === question.correctId}
+                showSolution={showSolution}
                 key={option.id}
                 label={option.label}
                 onClick={() => {
@@ -35,15 +44,23 @@ const Exercise = () => {
         </div>
       </div>
       <hr className='h-px my-4 bg-slate-200 border-0'></hr>
-      {selectedOptionId != null && (
-        <h1>
+      {selectedOptionId != null && showSolution && (
+        <div>
           Option {selectedOptionId} was selected! {question.correctId} is the
           correct answer.
-        </h1>
+        </div>
       )}
       <button
         type='button'
-        className='text-white bg-green-400 hover:bg-green-500 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2'
+        disabled={selectedOptionId == null}
+        onClick={() => {
+          setShowSolution(true);
+        }}
+        className={`text-white focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${
+          selectedOptionId == null
+            ? ' bg-slate-200 cursor-not-allowed'
+            : 'bg-green-400 hover:bg-green-500'
+        }`}
       >
         Check answer
       </button>

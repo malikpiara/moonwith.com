@@ -23,6 +23,9 @@ dependencies:
   autoprefixer:
     specifier: 10.4.16
     version: 10.4.16(postcss@8.4.32)
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   contentlayer:
     specifier: ^0.3.4
     version: 0.3.4(esbuild@0.19.9)
@@ -1492,6 +1495,10 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+    dev: false
+
+  /classnames@2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
     dev: false
 
   /client-only@0.0.1:
