@@ -6,7 +6,7 @@ export function Sidebar() {
         data-drawer-toggle='default-sidebar'
         aria-controls='default-sidebar'
         type='button'
-        className='inline-flex items-center p-2 mt-2 ms-3 text-sm text-slate-500 rounded-lg sm:hidden hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 dark:focus:ring-slate-600'
+        className='inline-flex items-center p-2 mt-2 ms-3 text-sm text-slate-500 rounded-lg sm:hidden hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200'
       >
         <span className='sr-only'>Open sidebar</span>
         <svg
@@ -29,15 +29,15 @@ export function Sidebar() {
         className='flex shrink-0 top-0 left-0 z-40 w-80 h-screen transition-transform -translate-x-full sm:translate-x-0'
         aria-label='Sidebar'
       >
-        <div className='h-full w-full px-4 py-4 overflow-y-auto bg-slate-50 dark:bg-slate-800'>
+        <div className='h-full w-full px-4 py-4 overflow-y-auto bg-slate-50'>
           <ul className='space-y-2 font-medium'>
             <li>
               <a
                 href='/logicola/logic'
-                className='flex items-center p-2 text-slate-900 rounded-lg dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 group'
+                className='flex items-center p-2 text-slate-900 rounded-lg  hover:bg-slate-100 group'
               >
                 <svg
-                  className='w-5 h-5 text-slate-500 transition duration-75 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white'
+                  className='w-5 h-5 text-slate-500 transition duration-75  group-hover:text-slate-900'
                   aria-hidden='true'
                   xmlns='http://www.w3.org/2000/svg'
                   fill='currentColor'
@@ -52,7 +52,7 @@ export function Sidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic'
-                className='flex flex-col p-2 text-slate-900 rounded-lg dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 group'
+                className='flex flex-col p-2 text-slate-900 rounded-lg hover:bg-slate-100 group'
               >
                 <div className='text-xs'>CHAPTER 6</div>
                 <span className='flex-1 whitespace-nowrap'>
@@ -63,7 +63,7 @@ export function Sidebar() {
             <li>
               <a
                 href='#'
-                className='flex flex-col p-2 text-slate-700 rounded-lg dark:text-white hover:bg-slate-100 opacity-30 cursor-not-allowed'
+                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-30 cursor-not-allowed'
               >
                 <div className='text-xs'>CHAPTER 7</div>
                 <span className='flex-1 whitespace-nowrap'>
@@ -74,7 +74,7 @@ export function Sidebar() {
             <li>
               <a
                 href='#'
-                className='flex flex-col p-2 text-slate-700 rounded-lg dark:text-white hover:bg-slate-100 opacity-30 cursor-not-allowed'
+                className='flex flex-col p-2 text-slate-700 rounded-lg hover:bg-slate-100 opacity-30 cursor-not-allowed'
               >
                 <div className='text-xs'>CHAPTER 8</div>
                 <span className='flex-1 whitespace-nowrap'>

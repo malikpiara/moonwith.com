@@ -98,7 +98,7 @@ const TableOfContent = ({ chapter }: TableOfContentProps) => {
         </>
       ) : (
         <>
-          <h3 className='mb-2 text-xl font-bold tracking-tight text-slate-900'>
+          <h3 className='mb-2 text-xl font-bold tracking-tight text-slate-900 opacity-30 cursor-not-allowed'>
             Chapter 7: Propositional Proofs
           </h3>
           <hr className='h-px my-4 bg-slate-200 border-0'></hr>

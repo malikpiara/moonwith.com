@@ -11,14 +11,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='bg-white border-slate-200 dark:border-slate-600 dark:bg-slate-900'>
+    <nav className='bg-white border-slate-200'>
       <div className='flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4'>
         <a
           href='/logicola'
           className='flex items-center space-x-3 rtl:space-x-reverse'
         >
           <Logo />
-          <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
+          <span className='self-center text-2xl font-semibold whitespace-nowrap'>
             LogiCola
           </span>
           <span className='bg-slate-100 text-slate-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded'>
@@ -28,7 +28,7 @@ const Navbar = () => {
 
         <button
           type='button'
-          className='inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-slate-500 rounded-lg md:hidden hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 dark:focus:ring-slate-600'
+          className='inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-slate-500 rounded-lg md:hidden hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200 '
         >
           <span className='sr-only'>Open main menu</span>
           <svg
@@ -50,11 +50,11 @@ const Navbar = () => {
         <div
           className={`items-center justify-between font-medium w-full md:flex md:w-auto md:order-1`}
         >
-          <ul className='flex flex-col p-4 md:p-0 mt-4 border border-slate-100 rounded-lg bg-slate-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-slate-800 md:dark:bg-slate-900 dark:border-slate-700'>
+          <ul className='flex flex-col p-4 md:p-0 mt-4 border border-slate-100 rounded-lg bg-slate-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white'>
             <li>
               <a
                 href='/logicola'
-                className='block py-2 px-3 text-slate-900 rounded hover:bg-slate-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-slate-700 dark:hover:text-green-500 md:dark:hover:bg-transparent dark:border-slate-700'
+                className='block py-2 px-3 text-slate-900 rounded hover:bg-slate-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0'
                 aria-current='page'
               >
                 Home
@@ -66,7 +66,7 @@ const Navbar = () => {
                 onMouseEnter={toggleMenu}
                 id='mega-menu-full-dropdown-button'
                 data-collapse-toggle='mega-menu-full-dropdown'
-                className='flex items-center justify-between w-full py-2 px-3 text-slate-900 rounded md:w-auto hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-slate-700 dark:hover:text-green-500 md:dark:hover:bg-transparent dark:border-slate-700'
+                className='flex items-center justify-between w-full py-2 px-3 text-slate-900 rounded md:w-auto hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0'
               >
                 Chapters{' '}
                 <svg
@@ -90,7 +90,7 @@ const Navbar = () => {
             <li>
               <a
                 href='/contact'
-                className='block py-2 px-3 text-slate-900 rounded hover:bg-slate-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-slate-700 dark:hover:text-green-500 md:dark:hover:bg-transparent dark:border-slate-700'
+                className='block py-2 px-3 text-slate-900 rounded hover:bg-slate-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0'
               >
                 Contact
               </a>
@@ -110,12 +110,10 @@ const Navbar = () => {
             <li>
               <a
                 href='/logicola/logic'
-                className='block p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700'
+                className='block p-3 rounded-lg hover:bg-slate-100'
               >
                 <div className='font-semibold'>Basic Propositional Logic</div>
-                <span className='text-sm text-slate-500 dark:text-slate-400'>
-                  Chapter 6
-                </span>
+                <span className='text-sm text-slate-500'>Chapter 6</span>
               </a>
             </li>
             <li>
@@ -124,9 +122,7 @@ const Navbar = () => {
                 className='block p-3 rounded-lg hover:bg-slate-100 opacity-30 cursor-not-allowed'
               >
                 <div className='font-semibold'>Quantificational Logic</div>
-                <span className='text-sm text-slate-500 dark:text-slate-400'>
-                  Chapter 8
-                </span>
+                <span className='text-sm text-slate-500'>Chapter 8</span>
               </a>
             </li>
           </ul>
@@ -134,7 +130,7 @@ const Navbar = () => {
             <li>
               <a
                 href='/logicola/logic'
-                className='block p-3 rounded-lg hover:bg-slate-100'
+                className='block p-3 rounded-lg hover:bg-slate-100 opacity-30 cursor-not-allowed'
               >
                 <div className='font-semibold'>Propositional Proofs</div>
                 <span className='text-sm text-slate-500'>Chapter 7</span>
