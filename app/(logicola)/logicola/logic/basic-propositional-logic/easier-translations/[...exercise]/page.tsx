@@ -1,5 +1,28 @@
-import { Sidebar } from '@/components/logicola/sidebar';
 import Exercise from '@/components/logicola/exercise';
+import { ChapterSidebar } from '@/components/logicola/chapterSidebar';
+
+export const metadata = {
+  title: 'Logicola | Basic Propositional Logic: Easier Translations',
+  description:
+    'Basic Propositional Logic exercises. Translating from natural language to symbolic form. LogiCola is a program to help students learn logic.',
+  creator: 'Malik Piara',
+  keywords: [
+    'logic',
+    'propositional logic',
+    'introduction to logic',
+    'basic propositional logic',
+    'propositional logic translations',
+    'download logicola',
+  ],
+  publisher: 'Malik Piara',
+  openGraph: {
+    images: '/malik_mini.jpeg',
+    authors: ['Malik'],
+  },
+  icons: {
+    icon: '/next.svg',
+  },
+};
 
 export default function ExercisePage({
   params,
@@ -9,7 +32,7 @@ export default function ExercisePage({
   return (
     <>
       <div className='flex w-full h-screen overflow-scroll'>
-        <Sidebar />
+        <ChapterSidebar />
         <div className='p-4 w-full'>
           <h1 className='mb-6 text-3xl font-bold text-slate-900'>
             Quiz (6.1.a)
