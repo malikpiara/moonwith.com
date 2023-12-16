@@ -29,33 +29,48 @@ const TopicTable = ({ topic }: TopicTableProps) => {
                     <li className='mb-4'>
                       <Link
                         href='/logicola/logic/basic-propositional-logic/easier-translations/2'
-                        className='opacity-30 cursor-not-allowed'
+                        className='hover:text-green-600 hover:underline'
                       >
                         Both A and either B or C
                       </Link>
                     </li>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/3'
+                        className='hover:text-green-600 hover:underline'
+                      >
                         Either both A and B or C
                       </Link>
                     </li>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/4'
+                        className='hover:text-green-600 hover:underline'
+                      >
                         If A, then B or C
                       </Link>
                     </li>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/5'
+                        className='hover:text-green-600 hover:underline'
+                      >
                         If A then B, or C
                       </Link>
                     </li>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/6'
+                        className='hover:text-green-600 hover:underline'
+                      >
                         If not A, then either not B or C
                       </Link>
                     </li>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/7'
+                        className='hover:text-green-600 hover:underline'
+                      >
                         If not A, then either not B or C
                       </Link>
                     </li>
@@ -64,22 +79,34 @@ const TopicTable = ({ topic }: TopicTableProps) => {
                 <div>
                   <ul className='text-slate-500 font-medium'>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/8'
+                        className='hover:text-green-600 hover:underline'
+                      >
                         Either A or B, and C
                       </Link>
                     </li>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/9'
+                        className='hover:text-green-600 hover:underline'
+                      >
                         Either A, or B and C
                       </Link>
                     </li>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/10'
+                        className='hover:text-green-600 hover:underline'
+                      >
                         If A then not both not B and not C
                       </Link>
                     </li>
                     <li className='mb-4'>
-                      <Link href='#' className='opacity-30 cursor-not-allowed'>
+                      <Link
+                        href='/logicola/logic/basic-propositional-logic/easier-translations/11'
+                        className='hover:text-green-600 hover:underline'
+                      >
                         If you get an error message, then the disk is bad or it
                         is a Macintosh disk.
                       </Link>
