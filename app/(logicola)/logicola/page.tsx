@@ -1,4 +1,5 @@
 import { Header } from '@/components/logicola/header';
+import Image from 'next/image';
 
 export default function Logicola() {
   return (
@@ -11,6 +12,7 @@ export default function Logicola() {
               <div className='text-2xl text-stone-400 dark:text-stone-500' />
             </div>
           </div>
+          I
         </div>
       </div>
     </>
