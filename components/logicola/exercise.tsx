@@ -45,9 +45,9 @@ const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
       </div>
       <hr className='h-px my-4 bg-stone-200 border-0'></hr>
       {selectedOptionId != null && showSolution && (
-        <div>
-          Option {selectedOptionId} was selected! {question.correctId} is the
-          correct answer.
+        <div className='p-2 mb-3 text-stone-800'>
+          You selected option {selectedOptionId + 1}. The correct answer is{' '}
+          {question.correctId + 1}.
         </div>
       )}
       <button

@@ -37,7 +37,7 @@ export function Sidebar() {
                 className='flex items-center p-2 text-stone-900 rounded-lg  hover:bg-stone-200 group'
               >
                 <svg
-                  className='w-5 h-5 text-stone-600 dark:text-white'
+                  className='w-5 h-5 text-stone-600'
                   aria-hidden='true'
                   xmlns='http://www.w3.org/2000/svg'
                   fill='currentColor'
