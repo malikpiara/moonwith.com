@@ -6,7 +6,7 @@ export function ChapterSidebar() {
         data-drawer-toggle='default-sidebar'
         aria-controls='default-sidebar'
         type='button'
-        className='inline-flex items-center p-2 mt-2 ms-3 text-sm text-slate-500 rounded-lg sm:hidden hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200'
+        className='inline-flex items-center p-2 mt-2 ms-3 text-sm text-stone-500 rounded-lg sm:hidden hover:bg-stone-200 focus:outline-none focus:ring-2 focus:ring-stone-200'
       >
         <span className='sr-only'>Open sidebar</span>
         <svg
@@ -26,18 +26,18 @@ export function ChapterSidebar() {
 
       <aside
         id='default-sidebar'
-        className='flex shrink-0 top-0 left-0 z-40 w-80 h-screen transition-transform -translate-x-full sm:translate-x-0'
+        className='flex shrink-0 top-0 left-0 z-40 w-80 h-screen transition-transform -transtone-x-full sm:transtone-x-0'
         aria-label='Sidebar'
       >
-        <div className='h-full w-full px-4 py-4 overflow-y-auto bg-slate-50'>
+        <div className='h-full w-full px-4 py-4 overflow-y-auto bg-stone-50'>
           <ul className='space-y-2 font-medium'>
             <li>
               <a
                 href='#'
-                className='flex items-center p-2 text-slate-900 rounded-lg  hover:bg-slate-100 group'
+                className='flex items-center p-2 text-stone-900 rounded-lg  hover:bg-stone-200 group'
               >
                 <svg
-                  className='w-5 h-5 text-slate-500 transition duration-75  group-hover:text-slate-900'
+                  className='w-5 h-5 text-stone-500 transition duration-75  group-hover:text-stone-900'
                   aria-hidden='true'
                   xmlns='http://www.w3.org/2000/svg'
                   fill='currentColor'
@@ -52,7 +52,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/1'
-                className='flex flex-col p-2 text-slate-900 rounded-lg hover:bg-slate-100 group'
+                className='flex flex-col p-2 text-stone-900 rounded-lg hover:bg-stone-200 group'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 1</span>
               </a>
@@ -60,7 +60,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/2'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 2</span>
               </a>
@@ -68,7 +68,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/3'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 3</span>
               </a>
@@ -76,7 +76,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/4'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 4</span>
               </a>
@@ -84,7 +84,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/5'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 5</span>
               </a>
@@ -92,7 +92,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/6'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 6</span>
               </a>
@@ -100,7 +100,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/7'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 7</span>
               </a>
@@ -108,7 +108,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/8'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 8</span>
               </a>
@@ -116,7 +116,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/9'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 9</span>
               </a>
@@ -124,7 +124,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/10'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 10</span>
               </a>
@@ -132,7 +132,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/11'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 11</span>
               </a>
@@ -140,7 +140,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/12'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 12</span>
               </a>
@@ -148,7 +148,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/13'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 13</span>
               </a>
@@ -156,7 +156,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/14'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 14</span>
               </a>
@@ -164,7 +164,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/15'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 15</span>
               </a>
@@ -172,7 +172,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/16'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 16</span>
               </a>
@@ -180,7 +180,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/17'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 17</span>
               </a>
@@ -188,7 +188,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/18'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 18</span>
               </a>
@@ -196,7 +196,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/19'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 19</span>
               </a>
@@ -204,7 +204,7 @@ export function ChapterSidebar() {
             <li>
               <a
                 href='/logicola/logic/basic-propositional-logic/easier-translations/20'
-                className='flex flex-col p-2 text-slate-700 rounded-lg  hover:bg-slate-100 opacity-50'
+                className='flex flex-col p-2 text-stone-700 rounded-lg  hover:bg-stone-200 opacity-50'
               >
                 <span className='flex-1 whitespace-nowrap'>Exercise 20</span>
               </a>

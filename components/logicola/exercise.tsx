@@ -16,11 +16,11 @@ const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
   const [showSolution, setShowSolution] = useState(false);
 
   return (
-    <div className='max-w-7xl p-6 bg-white border border-slate-200 rounded-lg mb-6'>
-      <h3 className='mb-2 text-xl font-bold tracking-tight text-slate-900'>
+    <div className='max-w-7xl p-6 bg-white border border-stone-200 rounded-lg mb-6'>
+      <h3 className='mb-2 text-xl font-bold tracking-tight text-stone-900'>
         {questionIdx + 1}.
       </h3>
-      <hr className='h-px my-4 bg-slate-200 border-0'></hr>
+      <hr className='h-px my-4 bg-stone-200 border-0'></hr>
       <div className='mx-auto w-full max-w-screen-xl p-4'>
         <div className='md:flex flex-col md:justify-between gap-5'>
           <div className='flex flex-col sm:gap-72 self-center mb-6 text-lg'>
@@ -43,7 +43,7 @@ const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
           })}
         </div>
       </div>
-      <hr className='h-px my-4 bg-slate-200 border-0'></hr>
+      <hr className='h-px my-4 bg-stone-200 border-0'></hr>
       {selectedOptionId != null && showSolution && (
         <div>
           Option {selectedOptionId} was selected! {question.correctId} is the
@@ -58,7 +58,7 @@ const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
         }}
         className={`text-white focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${
           selectedOptionId == null
-            ? ' bg-slate-200 cursor-not-allowed'
+            ? ' bg-stone-200 cursor-not-allowed'
             : 'bg-green-400 hover:bg-green-500'
         }`}
       >

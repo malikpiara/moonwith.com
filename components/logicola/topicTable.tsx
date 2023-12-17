@@ -6,111 +6,43 @@ type TopicTableProps = {
 
 const TopicTable = ({ topic }: TopicTableProps) => {
   return (
-    <div className='max-w-7xl p-6 bg-white border border-slate-200 rounded-lg mb-6'>
+    <div className='max-w-7xl p-6 bg-white border border-stone-200 rounded-lg mb-6'>
       {topic === 1 ? (
         <>
-          <h3 className='mb-2 text-xl font-bold tracking-tight text-slate-900'>
-            Easier Translations (6.1)
-          </h3>
-          <hr className='h-px my-4 bg-slate-200 border-0'></hr>
-          <div className='mx-auto w-full max-w-screen-xl p-4'>
+          <Link href='/logicola/logic/basic-propositional-logic/easier-translations'>
+            <h3 className='mb-2 text-xl font-bold tracking-tight text-stone-900 hover:text-green-500'>
+              Easier Translations (6.1)
+            </h3>
+          </Link>
+
+          <div className='mx-auto w-full max-w-screen-xl py-2'>
             <div className='md:flex md:justify-between'>
-              <div className='grid grid-cols-2 sm:gap-72 sm:grid-cols-2'>
+              <div className='flex flex-col w-full'>
                 <div>
-                  <ul className='text-slate-500 font-medium'>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/1'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        Not Both A and B
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/2'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        Both A and either B or C
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/3'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        Either both A and B or C
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/4'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        If A, then B or C
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/5'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        If A then B, or C
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/6'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        If not A, then either not B or C
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/7'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        If not A, then either not B or C
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className='text-slate-500 font-medium'>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/8'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        Either A or B, and C
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/9'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        Either A, or B and C
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/10'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        If A then not both not B and not C
-                      </Link>
-                    </li>
-                    <li className='mb-4'>
-                      <Link
-                        href='/logicola/logic/basic-propositional-logic/easier-translations/11'
-                        className='hover:text-green-600 hover:underline'
-                      >
-                        If you get an error message, then the disk is bad or it
-                        is a Macintosh disk.
-                      </Link>
-                    </li>
+                  <ul className='text-stone-500 font-medium'>
+                    <Link href='/logicola/logic/basic-propositional-logic/easier-translations/1'>
+                      <div className='flex items-center mb-4 p-3 rounded-md hover:bg-stone-200 gap-2'>
+                        <svg
+                          className='w-5 h-5 text-stone-500'
+                          aria-hidden='true'
+                          xmlns='http://www.w3.org/2000/svg'
+                          fill='none'
+                          viewBox='0 0 21 21'
+                        >
+                          <path
+                            stroke='currentColor'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth='2'
+                            d='M7.418 17.861 1 20l2.139-6.418m4.279 4.279 10.7-10.7a3.027 3.027 0 0 0-2.14-5.165c-.802 0-1.571.319-2.139.886l-10.7 10.7m4.279 4.279-4.279-4.279m2.139 2.14 7.844-7.844m-1.426-2.853 4.279 4.279'
+                          />
+                        </svg>
+                        <li className=''>
+                          Translating english sentences into well-formed formula
+                          (wff)
+                        </li>
+                      </div>
+                    </Link>
                   </ul>
                 </div>
               </div>
