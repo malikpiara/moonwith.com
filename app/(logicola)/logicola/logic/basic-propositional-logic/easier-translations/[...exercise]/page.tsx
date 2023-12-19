@@ -1,5 +1,5 @@
 import Exercise from '@/components/logicola/exercise';
-import { ChapterSidebar } from '@/components/logicola/chapterSidebar';
+import ChapterSidebar from '@/components/logicola/chapterSidebar';
 
 export const metadata = {
   title: 'Logicola | Basic Propositional Logic: Easier Translations',

@@ -26,9 +26,7 @@ export default function Option({
   return (
     <button onClick={onClick} className={className}>
       <div className='flex'>
-        <div className='py-4 ms-2 text-sm font-medium text-stone-600'>
-          {label}
-        </div>
+        <div className='py-4 ms-2 font-medium text-stone-600'>{label}</div>
       </div>
     </button>
   );
