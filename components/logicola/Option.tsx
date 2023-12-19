@@ -17,7 +17,7 @@ export default function Option({
   onClick,
 }: OptionProps) {
   const className = classNames(
-    'w-full ps-4 text-green-600 flex items-center border rounded-lg',
+    'w-full ps-4 text-logicolaPrimary flex items-center border rounded-lg',
     !isActive && 'border-stone-200',
     showSolution && (isCorrect ? 'bg-green-100' : 'text-red-400'),
     !showSolution && isActive && 'border-LogicolaPrimary'
@@ -26,7 +26,7 @@ export default function Option({
   return (
     <button onClick={onClick} className={className}>
       <div className='flex'>
-        <div className='py-4 ms-2 font-medium text-stone-600'>{label}</div>
+        <div className='py-4 ms-2 font-medium text-stone-900'>{label}</div>
       </div>
     </button>
   );
