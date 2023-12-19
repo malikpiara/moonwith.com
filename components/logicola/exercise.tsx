@@ -36,7 +36,7 @@ const Exercise: React.FC<ExerciseProps> = ({
             <div>{question.prompt}</div>
           </div>
 
-          {question.options.map((option) => {
+          {question.options.map((option: any) => {
             return (
               <Option
                 isActive={option.id === selectedOptionId}
