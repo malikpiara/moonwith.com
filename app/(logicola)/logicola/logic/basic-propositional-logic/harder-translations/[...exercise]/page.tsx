@@ -2,7 +2,7 @@ import Exercise from '@/components/logicola/exercise';
 import ExerciseSidebar from '@/components/logicola/exerciseSidebar';
 
 export const metadata = {
-  title: 'Logicola | Basic Propositional Logic: Easier Translations',
+  title: 'Logicola | Basic Propositional Logic: Harder Translations',
   description:
     'Basic Propositional Logic exercises. Translating from natural language to symbolic form. LogiCola is a program to help students learn logic.',
   creator: 'Malik Piara',
@@ -35,10 +35,10 @@ export default function ExercisePage({
         <ExerciseSidebar initialQuestionIdx={0} />
         <div className='p-4 w-full'>
           <h1 className='mb-6 text-3xl font-bold text-stone-900'>
-            Quiz (6.1.a)
+            Quiz (6.8.a)
           </h1>
           {/* We're subtracting 1 from the parameters because the index of the exercises starts at 0 */}
-          <Exercise chapter={0} initialQuestionIdx={params.exercise - 1} />
+          <Exercise chapter={1} initialQuestionIdx={params.exercise - 1} />
         </div>
       </div>
     </>

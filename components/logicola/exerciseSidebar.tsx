@@ -4,11 +4,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-interface ChapterSidebarProps {
+interface ExerciseSidebarProps {
   initialQuestionIdx: number;
 }
 
-const ChapterSidebar: React.FC<ChapterSidebarProps> = ({
+const ExerciseSidebar: React.FC<ExerciseSidebarProps> = ({
   initialQuestionIdx = 0,
 }) => {
   const [questionIdx, setQuestionIdx] = useState(initialQuestionIdx);
@@ -94,4 +94,4 @@ const ChapterSidebar: React.FC<ChapterSidebarProps> = ({
   );
 };
 
-export default ChapterSidebar;
+export default ExerciseSidebar;

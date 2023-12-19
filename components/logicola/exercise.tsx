@@ -1,18 +1,26 @@
 'use client';
 import React, { useState } from 'react';
 import Option from './Option';
-import { questions } from '@/app/(logicola)/content';
+import { chapters } from '@/app/(logicola)/content';
 import Link from 'next/link';
 
 interface ExerciseProps {
   initialQuestionIdx: number;
+  chapter: number;
 }
 
-const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
+const Exercise: React.FC<ExerciseProps> = ({
+  initialQuestionIdx = 0,
+  chapter = 1,
+}) => {
   const [questionIdx, setQuestionIdx] = useState(initialQuestionIdx);
   const [selectedOptionId, setSelectedOptionId] = useState<number | null>(null);
 
-  const question = questions[questionIdx];
+  /* chapters[chapter=0] = 6.1,
+    chapters[chapter=1] = 6.8,
+    this is very confusing. I need to refactor!    
+  */
+  const question = chapters[chapter].questions[questionIdx];
 
   const [showSolution, setShowSolution] = useState(false);
 
@@ -69,10 +77,11 @@ const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
 
         {/* I'm displaying a "next" button as long as
       there are exercises left in the array. */}
-        {questions.indexOf(question) != questions.length - 1 && (
+        {chapters[0].questions.indexOf(question) !=
+          chapters[0].questions.length - 1 && (
           <Link
             href={`/logicola/logic/basic-propositional-logic/easier-translations/${
-              questions.indexOf(question) + 2
+              chapters[0].questions.indexOf(question) + 2
             }`}
           >
             <button
