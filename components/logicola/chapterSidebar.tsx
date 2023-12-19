@@ -76,7 +76,7 @@ const ChapterSidebar: React.FC<ChapterSidebarProps> = ({
                     }`}
                     className={`flex flex-col p-2 rounded-lg group ${
                       isActive
-                        ? 'bg-green-400 text-white'
+                        ? 'bg-logicolaPrimary text-white'
                         : 'text-stone-700 hover:bg-stone-200 opacity-80'
                     }`}
                   >

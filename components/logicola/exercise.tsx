@@ -20,7 +20,6 @@ const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
       <h3 className='mb-2 text-xl font-bold tracking-tight text-stone-900'>
         {questionIdx + 1}.
       </h3>
-      <hr className='h-px my-4 bg-stone-200 border-0'></hr>
       <div className='mx-auto w-full max-w-screen-xl p-4'>
         <div className='md:flex flex-col md:justify-between gap-5'>
           <div className='flex flex-col sm:gap-72 self-center mb-6 text-lg'>
@@ -43,7 +42,7 @@ const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
           })}
         </div>
       </div>
-      <hr className='h-px my-4 bg-stone-200 border-0'></hr>
+      <hr className='h-px my-4 bg-stone-200 border-0' />
       {selectedOptionId != null && showSolution && (
         <div className='p-2 mb-3 text-stone-800'>
           You selected option {selectedOptionId + 1}. The correct answer is{' '}
@@ -59,7 +58,7 @@ const Exercise: React.FC<ExerciseProps> = ({ initialQuestionIdx = 0 }) => {
         className={`text-white focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${
           selectedOptionId == null
             ? ' bg-stone-200 cursor-not-allowed'
-            : 'bg-green-400 hover:bg-green-500'
+            : 'bg-logicolaPrimary hover:opacity-90'
         }`}
       >
         Check answer

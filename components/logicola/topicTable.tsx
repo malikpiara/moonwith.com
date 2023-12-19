@@ -10,7 +10,7 @@ const TopicTable = ({ topic }: TopicTableProps) => {
       {topic === 1 ? (
         <>
           <Link href='/logicola/logic/basic-propositional-logic/easier-translations/1'>
-            <h3 className='mb-2 text-xl font-bold tracking-tight text-stone-900 hover:text-green-500'>
+            <h3 className='mb-2 text-xl font-bold tracking-tight text-stone-900 hover:text-logicolaPrimary'>
               Easier Translations (6.1)
             </h3>
           </Link>

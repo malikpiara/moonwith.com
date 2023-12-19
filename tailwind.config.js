@@ -18,6 +18,7 @@ module.exports = {
         eggshell: '#EBE9E2',
         eggshellDark: '#CECCC6',
         gray: '#8295BA',
+        logicolaPrimary: '#17a34a'
       },
     },
   },

@@ -21,8 +21,8 @@ const Navbar = () => {
           <span className='self-center text-2xl font-semibold whitespace-nowrap'>
             LogiCola
           </span>
-          <span className='bg-stone-100 text-stone-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded'>
-            In Development
+          <span className='bg-stone-100 text-stone-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-md'>
+            Beta
           </span>
         </a>
 
@@ -57,7 +57,7 @@ const Navbar = () => {
                 onMouseEnter={toggleMenu}
                 id='mega-menu-full-dropdown-button'
                 data-collapse-toggle='mega-menu-full-dropdown'
-                className='flex items-center justify-between w-full py-2 px-3 text-stone-900 rounded md:w-auto hover:bg-stone-200 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0'
+                className='flex items-center justify-between w-full py-2 px-3 text-stone-900 rounded md:w-auto hover:bg-stone-200 md:hover:bg-transparent md:border-0 md:hover:text-logicolaPrimary md:p-0'
               >
                 Chapters{' '}
                 <svg
@@ -81,7 +81,7 @@ const Navbar = () => {
             <li>
               <a
                 href='/contact'
-                className='block py-2 px-3 text-stone-900 rounded hover:bg-stone-200 md:hover:bg-transparent md:hover:text-green-700 md:p-0'
+                className='block py-2 px-3 text-stone-900 rounded hover:bg-stone-200 md:hover:bg-transparent md:hover:text-logicolaPrimary md:p-0'
               >
                 Contact
               </a>

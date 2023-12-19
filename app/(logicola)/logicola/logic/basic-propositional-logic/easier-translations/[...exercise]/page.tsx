@@ -32,7 +32,7 @@ export default function ExercisePage({
   return (
     <>
       <div className='flex w-full h-screen overflow-scroll'>
-        <ChapterSidebar />
+        <ChapterSidebar initialQuestionIdx={0} />
         <div className='p-4 w-full'>
           <h1 className='mb-6 text-3xl font-bold text-stone-900'>
             Quiz (6.1.a)

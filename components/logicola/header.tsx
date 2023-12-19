@@ -17,7 +17,7 @@ export function Header() {
               <Mascot />
             </div>
             <div className='mt-16'>
-              <h1 className='mb-4 text-4xl font-extrabold tracking-tight leading-none text-stone-900 md:text-5xl lg:text-5xl'>
+              <h1 className='mb-4 text-4xl font-extrabold tracking-tight leading-none text-logicolaPrimary md:text-5xl lg:text-5xl'>
                 {header.title}
               </h1>
               <p className='text-lg font-normal text-stone-500 lg:text-xl'>

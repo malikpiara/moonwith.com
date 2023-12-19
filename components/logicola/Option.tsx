@@ -19,8 +19,8 @@ export default function Option({
   const className = classNames(
     'w-full ps-4 text-green-600 flex items-center border rounded-lg',
     !isActive && 'border-stone-200',
-    showSolution && (isCorrect ? 'bg-green-100' : 'bg-red-100'),
-    !showSolution && isActive && 'border-green-500'
+    showSolution && (isCorrect ? 'bg-green-100' : 'text-red-400'),
+    !showSolution && isActive && 'border-LogicolaPrimary'
   );
 
   return (
