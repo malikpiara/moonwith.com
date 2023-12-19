@@ -38,7 +38,7 @@ export default function ExercisePage({
             Quiz (6.1.a)
           </h1>
           {/* We're subtracting 1 from the parameters because the index of the exercises starts at 0 */}
-          <Exercise chapter={0} initialQuestionIdx={params.exercise - 1} />
+          <Exercise chapter={6.1} initialQuestionIdx={params.exercise - 1} />
         </div>
       </div>
     </>

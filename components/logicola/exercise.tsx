@@ -16,11 +16,12 @@ const Exercise: React.FC<ExerciseProps> = ({
   const [questionIdx, setQuestionIdx] = useState(initialQuestionIdx);
   const [selectedOptionId, setSelectedOptionId] = useState<number | null>(null);
 
-  /* chapters[chapter=0] = 6.1,
-    chapters[chapter=1] = 6.8,
-    this is very confusing. I need to refactor!    
-  */
-  const question = chapters[chapter].questions[questionIdx];
+  const chaptersMap = new Map();
+  chapters.forEach((chapter) => {
+    chaptersMap.set(chapter.id, chapter);
+  });
+
+  const question = chaptersMap.get(chapter).questions[questionIdx];
 
   const [showSolution, setShowSolution] = useState(false);
 
@@ -66,7 +67,7 @@ const Exercise: React.FC<ExerciseProps> = ({
           onClick={() => {
             setShowSolution(true);
           }}
-          className={`text-white focus:ring-4 focus:ring-green-300 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${
+          className={`text-white font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${
             selectedOptionId == null
               ? ' bg-stone-200 cursor-not-allowed'
               : 'bg-logicolaPrimary hover:opacity-90'

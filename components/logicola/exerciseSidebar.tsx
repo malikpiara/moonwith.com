@@ -1,5 +1,5 @@
 'use client';
-import { questions } from '@/app/(logicola)/content';
+import { chapters } from '@/app/(logicola)/content';
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -62,7 +62,7 @@ const ExerciseSidebar: React.FC<ExerciseSidebarProps> = ({
                 <span className='ms-3'>Easier Translations</span>
               </Link>
             </li>
-            {questions.map((item, i: number) => {
+            {chapters[0].questions.map((item, i: number) => {
               const isActive =
                 pathname ===
                 `/logicola/logic/basic-propositional-logic/easier-translations/${
