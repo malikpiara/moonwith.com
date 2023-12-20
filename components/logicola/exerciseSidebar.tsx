@@ -6,10 +6,14 @@ import { usePathname } from 'next/navigation';
 
 interface ExerciseSidebarProps {
   initialQuestionIdx: number;
+  isQuestionActive: (questionIdx: number) => boolean;
+  path: string;
 }
 
 const ExerciseSidebar: React.FC<ExerciseSidebarProps> = ({
   initialQuestionIdx = 0,
+  isQuestionActive,
+  path,
 }) => {
   const [questionIdx, setQuestionIdx] = useState(initialQuestionIdx);
   const pathname = usePathname();
@@ -59,21 +63,17 @@ const ExerciseSidebar: React.FC<ExerciseSidebarProps> = ({
                 >
                   <path d='M19.9 6.58c0-.009 0-.019-.006-.027l-2-4A1 1 0 0 0 17 2h-4a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a1 1 0 0 0 1 1h.3c-.03.165-.047.332-.051.5a3.25 3.25 0 1 0 6.5 0A3.173 3.173 0 0 0 7.7 12h4.6c-.03.165-.047.332-.051.5a3.25 3.25 0 1 0 6.5 0 3.177 3.177 0 0 0-.049-.5h.3a1 1 0 0 0 1-1V7a.99.99 0 0 0-.1-.42ZM16.382 4l1 2H13V4h3.382ZM4.5 13.75a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm11 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z' />
                 </svg>
-                <span className='ms-3'>Easier Translations</span>
+                <span className='ms-3'>{chapters[0].title}</span>
               </Link>
             </li>
+            {/* TODO: Refactor to be able to pick the chapter
+            by the id. Pass chapter as a parameter. */}
             {chapters[0].questions.map((item, i: number) => {
-              const isActive =
-                pathname ===
-                `/logicola/logic/basic-propositional-logic/easier-translations/${
-                  i + 1
-                }`;
+              const isActive = isQuestionActive(i);
               return (
                 <li key={i}>
                   <Link
-                    href={`/logicola/logic/basic-propositional-logic/easier-translations/${
-                      i + 1
-                    }`}
+                    href={`${path}${i + 1}`}
                     className={`flex flex-col p-2 rounded-lg group ${
                       isActive
                         ? 'bg-logicolaPrimary text-white'
