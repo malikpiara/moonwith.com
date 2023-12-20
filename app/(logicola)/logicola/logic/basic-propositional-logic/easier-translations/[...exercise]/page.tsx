@@ -13,6 +13,7 @@ export default function ExercisePage({
     <>
       <div className='flex w-full h-screen overflow-scroll'>
         <ExerciseSidebar
+          chapter={6.1}
           path='/logicola/logic/basic-propositional-logic/easier-translations/'
           isQuestionActive={(index) => {
             return (
