@@ -16,11 +16,23 @@ const Exercise: React.FC<ExerciseProps> = ({
   const [questionIdx, setQuestionIdx] = useState(initialQuestionIdx);
   const [selectedOptionId, setSelectedOptionId] = useState<number | null>(null);
 
+  // Helper function to generate the href for the Next button
+  const getNextHref = () => {
+    const nextQuestionIdx = questionIdx + 2;
+
+    if (chapter === 6.1) {
+      return `/logicola/logic/basic-propositional-logic/easier-translations/${nextQuestionIdx}`;
+    } else {
+      return `/logicola/logic/basic-propositional-logic/harder-translations/${nextQuestionIdx}`;
+    }
+  };
+
   const chaptersMap = new Map();
   chapters.forEach((chapter) => {
     chaptersMap.set(chapter.id, chapter);
   });
 
+  const currentChapter = chaptersMap.get(chapter);
   const question = chaptersMap.get(chapter).questions[questionIdx];
 
   const [showSolution, setShowSolution] = useState(false);
@@ -78,13 +90,8 @@ const Exercise: React.FC<ExerciseProps> = ({
 
         {/* I'm displaying a "next" button as long as
       there are exercises left in the array. */}
-        {chapters[0].questions.indexOf(question) !=
-          chapters[0].questions.length - 1 && (
-          <Link
-            href={`/logicola/logic/basic-propositional-logic/easier-translations/${
-              chapters[0].questions.indexOf(question) + 2
-            }`}
-          >
+        {questionIdx < currentChapter.questions.length - 1 && (
+          <Link href={getNextHref()}>
             <button
               type='button'
               className={`text-logicolaPrimary rounded-lg text-sm font-semibold px-5 py-2.5 me-2 mb-2 border border-logicolaPrimary hover:opacity-90 `}
