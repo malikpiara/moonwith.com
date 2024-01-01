@@ -3,15 +3,15 @@ import Link from 'next/link';
 import { format, subDays } from 'date-fns';
 
 const currentDateTime = new Date();
-let LastThirtyDays = subDays(currentDateTime, 1);
 
 const writingStreak = () => {
   let days = 30;
   let elements = [];
 
   for (let i = 0; i < days; i++) {
-    LastThirtyDays = subDays(LastThirtyDays, +1);
-    const formattedDate = format(LastThirtyDays, 'yyyy-MM-dd');
+    // Calculate the date for each day in the loop
+    const dateToCheck = subDays(currentDateTime, i);
+    const formattedDate = format(dateToCheck, 'yyyy-MM-dd');
 
     // Check if any post matches the current date
     const matchingPost = allPosts.find((post) =>
@@ -51,12 +51,22 @@ export default function Dashboard() {
       <div className='bg-white rounded-2xl p-5 dark:bg-primary'>
         <h2 className='text-primary  dark:text-secondary m-0'>Activity Map</h2>
         <p>
-          Below you can see how many blog posts Malik has written in the last 30
+          Below you can see how many blog posts I have written in the last 30
           days.
         </p>
 
         {writingStreak()}
       </div>
+
+      <Link className='no-underline  font-normal' href={'logicola'}>
+        <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
+          <h2 className='text-primary  dark:text-secondary m-0'>Logicola</h2>
+          <p>
+            A program to help college students learn logic. Web version of the
+            original software built by the late Professor Harry Gensler.
+          </p>
+        </div>
+      </Link>
 
       <Link className='no-underline  font-normal' href={'editor'}>
         <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
@@ -67,13 +77,6 @@ export default function Dashboard() {
             Like a spellchecker but for style. This is a tool built by Malik to
             make your writing clear and concise. Work in progress.
           </p>
-        </div>
-      </Link>
-
-      <Link className='no-underline  font-normal' href={'logicola'}>
-        <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
-          <h2 className='text-primary  dark:text-secondary m-0'>Logicola</h2>
-          <p>A program to help students learn logic.</p>
         </div>
       </Link>
     </article>
