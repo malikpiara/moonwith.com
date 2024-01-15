@@ -20,10 +20,10 @@ export function Header() {
     { label: 'Get in Touch', destination: '/contact' },
   ];
   return (
-    <header className='flex bg-tertiary w-full absolute left-0 top-0 flex-wrap opacity-80 text-primary'>
+    <header className='flex w-full absolute left-0 top-2 flex-wrap opacity-80 text-primary dark:text-gray'>
       <div className='flex items-center justify-between'>
         <ModeToggle />
-        <nav className='ml-auto font-medium space-x-1'>
+        <nav className='ml-auto font-semibold space-x-1'>
           {items.map((item: NavItem) => {
             return (
               <Link
