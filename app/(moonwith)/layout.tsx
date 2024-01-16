@@ -5,7 +5,6 @@ import { Analytics } from '@/components/analytics';
 import { Header } from '@/components/moonwith/header';
 import { Motto } from '@/components/moonwith/motto';
 import { Moon } from '@/components/moonwith/moon';
-import { useEffect, useState } from 'react';
 import { LoadingScreen } from '@/components/moonwith/loadingScreen';
 
 const inter = Inter({ subsets: ['latin'] });

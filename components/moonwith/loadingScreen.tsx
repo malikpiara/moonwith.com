@@ -16,7 +16,7 @@ export const LoadingScreen = () => {
   return (
     <>
       {showLoadingScreen && (
-        <div className='w-full h-screen absolute left-0 top-0 bg-primary flex items-center m-auto'>
+        <div className='w-full h-screen z-50 absolute left-0 top-0 bg-primary flex items-center m-auto'>
           <svg
             className='w-[48px] h-[48px] text-gray-800 animate-pulse dark:text-white m-auto'
             aria-hidden='true'
