@@ -57,6 +57,7 @@ export default async function PostPage({ params }: PostProps) {
           {post.description}
         </p>
       )} */}
+
       <Mdx code={post.body.code} />
     </article>
   );
