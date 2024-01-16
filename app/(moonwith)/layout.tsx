@@ -5,6 +5,8 @@ import { Analytics } from '@/components/analytics';
 import { Header } from '@/components/moonwith/header';
 import { Motto } from '@/components/moonwith/motto';
 import { Moon } from '@/components/moonwith/moon';
+import { useEffect, useState } from 'react';
+import { LoadingScreen } from '@/components/moonwith/loadingScreen';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -39,6 +41,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={`antialiased min-h-screen bg-secondary dark:bg-primary text-primary dark:text-gray ${inter.className}`}
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <LoadingScreen />
           <div className='max-w-2xl mx-auto py-10 px-4'>
             <Header />
             <main className='sm:mt-10'>{children}</main>
