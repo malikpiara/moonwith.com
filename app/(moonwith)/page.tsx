@@ -5,15 +5,10 @@ import Link from 'next/link';
 /*
  * Sorting all of my posts in descending order
  * so that the most recent posts appear on top of the page.
- *
- * Using .toSorted() instead of .sort() to copy instead of mutate
- * the original array. In this instance it doesn't make any difference though.
- *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted
  */
 
 export default function Home() {
-  const posts = allPosts.toSorted((a, b) =>
+  const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
   return (
