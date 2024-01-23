@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ModeToggle } from '../mode-toggle';
-import { Moon } from './moon';
+import Image from 'next/image';
+import logo from '../../public/logomark.svg';
 
 interface NavItem {
   label: string;
@@ -23,7 +24,7 @@ export function Header() {
   return (
     <>
       <nav className='sm:hidden block w-full bottom-5 relative -mb-10'>
-        <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
+        <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0'>
           <a
             href='/'
             className='flex items-center space-x-3 rtl:space-x-reverse'
@@ -46,9 +47,15 @@ export function Header() {
             >
               <path d='M17.8 13.75a1 1 0 0 0-.859-.5A7.488 7.488 0 0 1 10.52 2a1 1 0 0 0 0-.969A1.035 1.035 0 0 0 9.687.5h-.113a9.5 9.5 0 1 0 8.222 14.247 1 1 0 0 0 .004-.997Z' />
             </svg>
-            <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
+            <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white hidden dark:block'>
               Moonwith
             </span>
+            <Image
+              className='dark:hidden'
+              alt='logomark'
+              src={logo}
+              width={140}
+            />
           </a>
           <button
             data-collapse-toggle='navbar-hamburger'
