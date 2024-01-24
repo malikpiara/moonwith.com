@@ -1,7 +1,9 @@
+'use client';
 import Link from 'next/link';
 import { ModeToggle } from '../mode-toggle';
 import Image from 'next/image';
 import logo from '../../public/logomark.svg';
+import { useState } from 'react';
 
 interface NavItem {
   label: string;
@@ -21,9 +23,15 @@ export function Header() {
     { label: 'Friends', destination: '/friends' },
     { label: 'Get in Touch', destination: '/contact' },
   ];
+
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const toggleMenu = () => {
+    setDropdownVisible(!isDropdownVisible);
+  };
   return (
     <>
-      <nav className='sm:hidden block w-full bottom-5 relative -mb-10'>
+      <nav className='sm:hidden block w-full bottom-5 relative -mb-5'>
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0'>
           <a
             href='/'
@@ -58,6 +66,7 @@ export function Header() {
             />
           </a>
           <button
+            onClick={toggleMenu}
             data-collapse-toggle='navbar-hamburger'
             type='button'
             className='inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
@@ -81,25 +90,27 @@ export function Header() {
               />
             </svg>
           </button>
-          <div className='w-full' id='navbar-hamburger'>
-            <ul className='flex flex-col font-medium mt-4 rounded-lg'>
-              {items.map((item: NavItem) => {
-                return (
-                  <li
-                    key={item.label}
-                    className='block py-2 px-3 text-primary rounded hover:text-white hover:bg-primary dark:text-inherit dark:hover:text-white dark:hover:bg-blue-600'
-                  >
-                    <Link
-                      className='transition-all duration-300 hover:opacity-100'
-                      href={item.destination}
+          {isDropdownVisible && (
+            <div className='w-full' id='navbar-hamburger'>
+              <ul className='flex flex-col font-medium mt-4 rounded-lg'>
+                {items.map((item: NavItem) => {
+                  return (
+                    <li
+                      key={item.label}
+                      className='block py-2 px-3 text-primary rounded hover:text-white hover:bg-primary dark:text-inherit dark:hover:text-white dark:hover:bg-blue-600'
                     >
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+                      <Link
+                        className='transition-all duration-300 hover:opacity-100'
+                        href={item.destination}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
         </div>
       </nav>
 
