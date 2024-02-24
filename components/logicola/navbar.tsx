@@ -80,6 +80,14 @@ const Navbar = () => {
 
             <li>
               <a
+                href='/logicola/answers'
+                className='block py-2 px-3 text-black opacity-50 rounded hover:bg-stone-200 hover:opacity-100 md:hover:bg-transparent md:hover:text-logicolaPrimary md:p-0'
+              >
+                Answers
+              </a>
+            </li>
+            <li>
+              <a
                 href='/contact'
                 className='block py-2 px-3 text-black opacity-50 rounded hover:bg-stone-200 hover:opacity-100 md:hover:bg-transparent md:hover:text-logicolaPrimary md:p-0'
               >
