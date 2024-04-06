@@ -1,4 +1,4 @@
-import { allPosts } from '@/.contentlayer/generated';
+import { allPosts } from 'content-collections';
 import { compareDesc } from 'date-fns';
 import Link from 'next/link';
 
@@ -16,9 +16,9 @@ export default function Home() {
       {posts.map((post) => (
         <article
           className='hover:bg-eggshell rounded-xl transition-all duration-700 p-2 dark:hover:bg-primary'
-          key={post._id}
+          key={post._meta.path}
         >
-          <Link className='no-underline' href={post.slug}>
+          <Link className='no-underline' href={`/posts/${post.slug}`}>
             <h2 className='text-primary mt-2 dark:text-secondary'>
               {post.title}
             </h2>

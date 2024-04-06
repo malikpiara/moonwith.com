@@ -1,18 +1,17 @@
 import { notFound } from 'next/navigation';
-import { allPosts } from 'contentlayer/generated';
-
+import { allPosts } from 'content-collections';
+import { MDXContent } from '@content-collections/mdx/react';
 import { Metadata } from 'next';
-import { Mdx } from '@/components/mdx-components';
 
-interface PostProps {
+/* interface PostProps {
   params: {
-    slug: string[];
+    slug: string;
   };
 }
 
 async function getPostFromParams(params: PostProps['params']) {
-  const slug = params?.slug?.join('/');
-  const post = allPosts.find((post) => post.slugAsParams === slug);
+  const slug = params.slug;
+  const post = allPosts.find((post) => post.slug == params.slug);
 
   if (!post) {
     null;
@@ -40,12 +39,16 @@ export async function generateMetadata({
 
 export async function generateStaticParams(): Promise<PostProps['params'][]> {
   return allPosts.map((post) => ({
-    slug: post.slugAsParams.split('/'),
+    slug: post._meta.path,
   }));
-}
+} */
 
-export default async function PostPage({ params }: PostProps) {
-  const post = await getPostFromParams(params);
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = allPosts.find((post) => post.slug == params.slug);
 
   if (!post) {
     notFound();
@@ -54,13 +57,8 @@ export default async function PostPage({ params }: PostProps) {
   return (
     <article className='py-6 prose dark:prose-invert dark:text-gray text-lg md:text-[1.2rem]'>
       <h1 className='mb-2 text-primary dark:text-secondary'>{post.title}</h1>
-      {/* {post.description && (
-        <p className="text-xl mt-0 text-stone-700 dark:text-stone-200">
-          {post.description}
-        </p>
-      )} */}
 
-      <Mdx code={post.body.code} />
+      <MDXContent code={post.body} />
     </article>
   );
 }
