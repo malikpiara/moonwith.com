@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes moveX {
+    from { left: 0; } to { left: 1000px; }
+  }
+  @keyframes moveY {
+    from { top: 0; } to { top: 400px; }
+  }
