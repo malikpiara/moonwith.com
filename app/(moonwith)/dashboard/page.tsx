@@ -1,4 +1,4 @@
-import { allPosts } from '@/.contentlayer/generated';
+import { allPosts } from 'content-collections';
 import Link from 'next/link';
 import { format, subDays } from 'date-fns';
 
@@ -23,16 +23,15 @@ const writingStreak = () => {
         <Link
           key={i}
           className='rounded bg-pistachio hover:bg-pistachioDark w-3 h-3 inline-flex px-4 mx-1 hover:scale-110 transition-all'
-          href={matchingPost.slug}
+          href={`/posts/${matchingPost.slug}`}
           title={matchingPost.slug}
         />
       );
     } else {
       elements.push(
-        <Link
+        <div
           key={i}
-          className='rounded bg-eggshell hover:bg-eggshellDark w-3 h-3 inline-flex px-4 mx-1 hover:scale-110 transition-all'
-          href={''}
+          className='rounded bg-eggshell hover:bg-eggshellDark w-3 h-3 inline-flex px-4 mx-1 hover:scale-110 transition-all cursor-pointer'
           title={formattedDate}
         />
       );
@@ -44,14 +43,12 @@ const writingStreak = () => {
 export default function Dashboard() {
   return (
     <article className='py-6 prose dark:prose-invert'>
-      <h1 className='text-primary dark:text-secondary italic'>
-        Open Dashboard
-      </h1>
+      <h1 className='text-primary dark:text-secondary italic'>Software</h1>
 
       <div className='bg-white rounded-2xl p-5 dark:bg-primary'>
         <h2 className='text-primary  dark:text-secondary m-0'>Activity Map</h2>
         <p>
-          Below you can see how many blog posts I have written in the last 30
+          Below you can see how many blog posts I have published in the last 30
           days.
         </p>
 
@@ -68,7 +65,24 @@ export default function Dashboard() {
         </div>
       </Link>
 
-      <Link className='no-underline  font-normal' href={'editor'}>
+      <Link
+        className='no-underline  font-normal'
+        href={
+          'https://play.google.com/store/apps/details?id=com.moonwith.earnest'
+        }
+      >
+        <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
+          <h2 className='text-primary  dark:text-secondary m-0'>
+            Earnest Cards
+          </h2>
+          <p>
+            Cards with questions for more meaningful conversations. You can use
+            them to cultivate friendships and to get to know yourself better.
+          </p>
+        </div>
+      </Link>
+
+      {/* <Link className='no-underline  font-normal' href={'editor'}>
         <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
           <h2 className='text-primary  dark:text-secondary m-0'>
             Mercury Text Editor
@@ -78,7 +92,7 @@ export default function Dashboard() {
             make your writing clear and concise. Work in progress.
           </p>
         </div>
-      </Link>
+      </Link> */}
     </article>
   );
 }

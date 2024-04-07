@@ -1,34 +1,38 @@
 {
-  "name": "next-contentlayer",
-  "version": "0.1.0",
+  "name": "moonwith",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "concurrently 'content-collections watch' next dev --turbo",
+    "build": "content-collections build && next build",
     "preview": "next build && next start",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.12",
     "@types/node": "20.12.5",
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.24",
     "@vercel/analytics": "^1.2.2",
     "autoprefixer": "10.4.18",
     "classnames": "^2.5.1",
-    "contentlayer": "^0.3.4",
     "date-fns": "^3.6.0",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.1.3",
-    "flowbite": "^2.3.0",
-    "next": "13.5.1",
-    "next-contentlayer": "^0.3.4",
+    "eslint-config-next": "14.1.4",
+    "next": "14.1.4",
     "next-themes": "^0.3.0",
     "postcss": "8.4.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.4.1",
     "typescript": "5.4.2"
+  },
+  "devDependencies": {
+    "@content-collections/cli": "^0.1.2",
+    "@content-collections/core": "^0.4.1",
+    "@content-collections/mdx": "^0.1.3",
+    "@content-collections/next": "^0.1.3",
+    "concurrently": "^8.2.2"
   }
 }
