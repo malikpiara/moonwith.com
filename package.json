@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "concurrently 'content-collections watch' next dev",
+    "dev": "concurrently 'content-collections watch' next dev --turbo",
     "build": "content-collections build && next build",
     "preview": "next build && next start",
     "start": "next start",
