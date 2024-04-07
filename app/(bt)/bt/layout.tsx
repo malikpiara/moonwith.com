@@ -7,8 +7,8 @@ interface BTLayoutProps {
 export default function GameLayout({ children }: BTLayoutProps) {
   return (
     <html lang='en'>
-      <body className={`antialiased min-h-screen bg-primary`}>
-        <main className='flex h-screen'>{children}</main>
+      <body className={`antialiased min-h-screen bg-primary z-50`}>
+        <main className='flex h-screen z-50'>{children}</main>
       </body>
     </html>
   );
