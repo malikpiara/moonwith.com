@@ -11,7 +11,6 @@ const posts = defineCollection({
     date: z.string(),
   }),
   transform: async (document, context) => {
-    // @ts-ignore
     const body = await compileMDX(context, document);
     const slug = document._meta.path;
     return {

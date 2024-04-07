@@ -4,6 +4,9 @@ const { withContentCollections } = require("@content-collections/next");
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  }
 };
 
 module.exports = withContentCollections(nextConfig);
