@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { allPosts } from 'content-collections';
 import { MDXContent } from '@content-collections/mdx/react';
 import { Metadata } from 'next';
+import { Sidenote } from '@/components/moonwith/sidenote';
 
 /* interface PostProps {
   params: {
