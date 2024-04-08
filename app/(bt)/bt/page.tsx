@@ -4,13 +4,15 @@ import { useState, useEffect } from 'react';
 
 export default function GameWindow() {
   const [playerPosition, setPlayerPosition] = useState(500);
-  const [isAttacking, setAttacking] = useState(false);
+  const [isArrowActive, setIsArrowActive] = useState(false);
+  const [initialArrowPosition, setInitialArrowPosition] = useState(null);
 
   const handleKeyDown = (event) => {
     switch (event.key) {
       case ' ':
         event.preventDefault();
-        setAttacking(!isAttacking);
+        setInitialArrowPosition(playerPosition);
+        setIsArrowActive(true);
         break;
       case 'ArrowRight':
         event.preventDefault();
@@ -31,17 +33,19 @@ export default function GameWindow() {
   });
   return (
     <>
-      <div className='relative flex m-auto bg-[#060f20] w-full h-full rounded-xl max-w-6xl max-h-[35rem] z-50'>
+      <div className='relative flex m-auto bg-[#060f20] w-full h-full rounded-xl max-w-6xl max-h-[35rem] z-50 overflow-hidden'>
         <Character position={playerPosition} />
         <Character color='bg-blue-600' position={800} />
 
         <Ball xPosition={'left-20'} />
 
-        {isAttacking && (
-          <>
-            <Arrow position={playerPosition} />
-            <Ball size={'small'} />
-          </>
+        {/* <Ball size={'small'} /> */}
+
+        {isArrowActive && (
+          <Arrow
+            initialPosition={initialArrowPosition}
+            setIsArrowActive={setIsArrowActive}
+          />
         )}
       </div>
     </>
@@ -94,14 +98,26 @@ const Ball = ({
   );
 };
 
-const Arrow = ({ position }) => {
-  position = `translateX(${position}px)`;
+const Arrow = ({ initialPosition, setIsArrowActive }) => {
+  initialPosition = `translateX(${initialPosition}px)`;
+
+  useEffect(() => {
+    // Add animation logic here (e.g., CSS transition/animation)
+
+    // Example with setTimeout:
+    const timeoutId = setTimeout(() => {
+      setIsArrowActive(false); // Hide arrow after animation
+    }, 1000); // Adjust timeout as needed
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
-    <div style={{ transform: position }}>
+    <div style={{ transform: initialPosition }}>
       <svg
         className='absolute text-white bottom-25 left-4 -z-10'
         style={{
-          animation: 'arrowAttack 4s linear 0s infinite',
+          animation: 'arrowAttack 1s linear 0s',
         }}
         viewBox='239.515 95.492 18.685 332.098'
         width='18.685'
