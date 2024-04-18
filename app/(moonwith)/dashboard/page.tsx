@@ -55,7 +55,7 @@ export default function Dashboard() {
         {writingStreak()}
       </div>
 
-      <Link className='no-underline  font-normal' href={'logicola'}>
+      <Link className='no-underline  font-normal' href='https://logicola.org/'>
         <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
           <h2 className='text-primary  dark:text-secondary m-0'>Logicola</h2>
           <p>
