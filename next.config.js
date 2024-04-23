@@ -6,6 +6,16 @@ const nextConfig = {
   swcMinify: true,
   typescript: {
     ignoreBuildErrors: true,
+  },
+  async redirects() {
+    return [
+      {
+      source: '/logicola/:slug*',
+      basePath: false,
+      destination: 'https://logicola.org',
+      permanent: true,
+      }
+    ]
   }
 };
 
