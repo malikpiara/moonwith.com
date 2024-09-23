@@ -20,7 +20,6 @@ export function Header() {
     { label: 'About', destination: '/about' },
     { label: 'Work', destination: '/projects' },
     { label: 'Software', destination: '/dashboard' },
-    { label: 'Friends', destination: '/friends' },
     { label: 'Get in Touch', destination: '/contact' },
   ];
 
