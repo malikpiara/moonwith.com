@@ -4,7 +4,7 @@ import { MDXContent } from '@content-collections/mdx/react';
 import { Metadata } from 'next';
 import { Sidenote } from '@/components/moonwith/sidenote';
 
-/* interface PostProps {
+interface PostProps {
   params: {
     slug: string;
   };
@@ -42,7 +42,7 @@ export async function generateStaticParams(): Promise<PostProps['params'][]> {
   return allPosts.map((post) => ({
     slug: post._meta.path,
   }));
-} */
+}
 
 export default async function PostPage({
   params,
