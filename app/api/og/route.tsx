@@ -45,7 +45,7 @@ export async function GET(request: Request) {
       <div
         style={{
           display: 'flex',
-          fontSize: 120,
+          fontSize: 125,
           color: '#EAECD7',
           background: '#1F2115',
           width: '100%',
@@ -55,22 +55,22 @@ export async function GET(request: Request) {
         }}
       >
         <img
-          width='256'
-          height='256'
-          src={`${baseUrl}/icon3.png`}
+          width='90'
+          height='90'
+          src={`${baseUrl}/icon4.png`}
           style={{
             position: 'absolute',
             bottom: 0,
             right: 0,
-            width: 70,
-            height: 70,
             margin: 30,
           }}
         />
 
         <p
           style={{
-            marginLeft: 30,
+            marginLeft: 40,
+            marginTop: 60,
+            marginRight: 60,
             lineHeight: 1,
           }}
         >
