@@ -24,7 +24,7 @@ export default function Home() {
             </h2>
           </Link>
           {post.description && (
-            <p className='dark:text-gray'>{post.description}</p>
+            <p className='dark:text-gray text-lg'>{post.description}</p>
           )}
         </article>
       ))}

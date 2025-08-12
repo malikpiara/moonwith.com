@@ -18,14 +18,15 @@ export const metadata = {
     'daily blog',
     'product management',
     'product enablement',
+    'emotional intelligence',
   ],
   publisher: 'Malik Piara',
   openGraph: {
     images: '/malik_mini.jpeg',
-    authors: ['Malik'],
+    authors: ['Malik Piara'],
   },
   icons: {
-    icon: '/next.svg',
+    icon: '/icon.png',
   },
 };
 

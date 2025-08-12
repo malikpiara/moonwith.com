@@ -57,19 +57,18 @@ export default function Dashboard() {
 
       <Link className='no-underline  font-normal' href='https://logicola.org/'>
         <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
-          <h2 className='text-primary  dark:text-secondary m-0'>Logicola</h2>
+          <h2 className='text-primary  dark:text-secondary m-0'>Logicola 3</h2>
           <p>
-            A program to help college students learn logic. Web version of the
-            original software built by the late Professor Harry Gensler.
+            An e-learning platform to help college students learn formal and
+            informal logic. Web version of the original software built by the
+            late Professor Harry Gensler.
           </p>
         </div>
       </Link>
 
       <Link
         className='no-underline  font-normal'
-        href={
-          'https://play.google.com/store/apps/details?id=com.moonwith.earnest'
-        }
+        href={'https://earnest.cards'}
       >
         <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
           <h2 className='text-primary  dark:text-secondary m-0'>
