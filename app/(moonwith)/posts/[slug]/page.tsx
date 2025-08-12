@@ -39,7 +39,7 @@ export async function generateMetadata({
     openGraph: {
       images: [
         {
-          url: `https://moonwith.com/api/og?article=${encodeURIComponent(
+          url: `https://moonwith.com/api/og?title=${encodeURIComponent(
             post.title
           )}`,
           width: 1200,
