@@ -62,8 +62,8 @@ export async function GET(request: Request) {
             position: 'absolute',
             bottom: 0,
             right: 0,
-            width: 50,
-            height: 50,
+            width: 70,
+            height: 70,
             margin: 30,
           }}
         />

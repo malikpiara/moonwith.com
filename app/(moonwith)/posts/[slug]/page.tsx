@@ -36,6 +36,8 @@ export async function generateMetadata({
     authors: [{ name: 'Malik Piara', url: 'https://moonwith.com/' }],
     keywords: ['Malik Piara', 'Moonwith', 'Emotional Intelligence'],
     creator: 'Malik Piara',
+    property: 'og:image',
+    content: 'https://moonwith.com/api/og?article=malikpiara',
   };
 }
 
