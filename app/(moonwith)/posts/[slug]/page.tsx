@@ -38,6 +38,16 @@ export async function generateMetadata({
     creator: 'Malik Piara',
     property: 'og:image',
     content: 'https://moonwith.com/api/og?article=malikpiara',
+    openGraph: {
+      images: [
+        {
+          url: `https://moonwith.com/api/og?article=malikpiara`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
   };
 }
 
