@@ -2,8 +2,14 @@ import { ImageResponse } from 'next/og';
 // App router includes @vercel/og.
 // No need to install it.
 
-async function loadGoogleFont(font: string, text: string) {
-  const url = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(
+async function loadGoogleFont(
+  font: string,
+  text: string,
+  italic = false,
+  weight = 400
+) {
+  const italParam = italic ? '1' : '0';
+  const url = `https://fonts.googleapis.com/css2?family=${font}:ital,wght@${italParam},${weight}&text=${encodeURIComponent(
     text
   )}`;
   const css = await (await fetch(url)).text();
@@ -23,6 +29,7 @@ async function loadGoogleFont(font: string, text: string) {
 
 export async function GET(request: Request) {
   const text = 'On letting go of relationships';
+  const url = 'moonwith.com';
   const { searchParams } = new URL(request.url);
   const article = searchParams.get('article');
   const baseUrl = new URL(request.url).origin;
@@ -57,7 +64,7 @@ export async function GET(request: Request) {
             right: 0,
             width: 50,
             height: 50,
-            margin: 10,
+            margin: 30,
           }}
         />
 
@@ -74,13 +81,12 @@ export async function GET(request: Request) {
             position: 'absolute',
             bottom: 0,
             left: 0,
-            margin: 10,
+            margin: 30,
             fontSize: 30,
-            fontFamily: 'serif',
-            fontStyle: 'italic',
+            fontFamily: 'Source Serif 4',
           }}
         >
-          moonwith.com
+          {url}
         </p>
       </div>
     ),
@@ -92,6 +98,17 @@ export async function GET(request: Request) {
           name: 'Instrument Serif',
           data: await loadGoogleFont('Instrument Serif', text),
           style: 'normal',
+        },
+        {
+          name: 'Source Serif 4',
+          data: await loadGoogleFont(
+            'Source Serif 4',
+            'moonwith.com',
+            true,
+            800
+          ),
+          style: 'italic',
+          weight: 800,
         },
       ],
     }
