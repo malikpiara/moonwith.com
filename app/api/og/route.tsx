@@ -28,13 +28,13 @@ async function loadGoogleFont(
 }
 
 export async function GET(request: Request) {
-  const text = 'On letting go of relationships';
-  const url = 'moonwith.com';
   const { searchParams } = new URL(request.url);
-  const article = searchParams.get('article');
+  const title = searchParams.get('title');
+  const url = 'moonwith.com';
+
   const baseUrl = new URL(request.url).origin;
-  if (!article) {
-    return new ImageResponse(<>Visit with &quot;?article=vercel&quot;</>, {
+  if (!title) {
+    return new ImageResponse(<>Visit with &quot;?title=vercel&quot;</>, {
       width: 1200,
       height: 630,
     });
@@ -74,7 +74,7 @@ export async function GET(request: Request) {
             lineHeight: 1,
           }}
         >
-          {text}
+          {title}
         </p>
         <p
           style={{
@@ -96,7 +96,7 @@ export async function GET(request: Request) {
       fonts: [
         {
           name: 'Instrument Serif',
-          data: await loadGoogleFont('Instrument Serif', text),
+          data: await loadGoogleFont('Instrument Serif', title),
           style: 'normal',
         },
         {

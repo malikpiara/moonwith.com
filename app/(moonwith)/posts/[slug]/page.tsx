@@ -36,12 +36,12 @@ export async function generateMetadata({
     authors: [{ name: 'Malik Piara', url: 'https://moonwith.com/' }],
     keywords: ['Malik Piara', 'Moonwith', 'Emotional Intelligence'],
     creator: 'Malik Piara',
-    property: 'og:image',
-    content: 'https://moonwith.com/api/og?article=malikpiara',
     openGraph: {
       images: [
         {
-          url: `https://moonwith.com/api/og?article=malikpiara`,
+          url: `https://moonwith.com/api/og?article=${encodeURIComponent(
+            post.title
+          )}`,
           width: 1200,
           height: 630,
           alt: post.title,
