@@ -6,6 +6,7 @@ import { Header } from '@/components/moonwith/header';
 import { Motto } from '@/components/moonwith/motto';
 import { Moon } from '@/components/moonwith/moon';
 import { LoadingScreen } from '@/components/moonwith/loadingScreen';
+import { Viewport } from 'next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,8 +24,11 @@ const instrument_serif = Instrument_Serif({
 export const metadata = {
   title: 'Moonwith',
   description: "Malik's Digital Home",
-  themeColor: '#1F2115',
+
   backgroundColor: '#1F2115',
+  other: {
+    'theme-color': '#1F2115',
+  },
   creator: 'Malik Piara',
   keywords: [
     'personal blog',
@@ -46,6 +50,10 @@ export const metadata = {
 interface RootLayoutProps {
   children: React.ReactNode;
 }
+
+export const viewport: Viewport = {
+  themeColor: '#1F2115',
+};
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
