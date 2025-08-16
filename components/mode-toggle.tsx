@@ -16,7 +16,7 @@ export function ModeToggle() {
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
           strokeWidth={2}
-          stroke='#152644'
+          stroke='#EAECD7'
           className='w-4 h-4'
         >
           <path
@@ -31,7 +31,7 @@ export function ModeToggle() {
           fill='none'
           viewBox='0 0 24 24'
           strokeWidth={1.5}
-          stroke='#152644'
+          stroke='#EAECD7'
           className='w-4 h-4'
         >
           <path

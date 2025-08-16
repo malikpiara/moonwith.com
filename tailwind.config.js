@@ -9,8 +9,12 @@ module.exports = {
   darkMode: ["class"],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)'],
+        instrumentSerif: ['var(--font-instrument-serif)'],
+      },
       colors: {
-        primary: '#152644',
+        primary: '#1F2115',
         secondary: '#FBF9F2',
         tertiary: '#BCB5FA',
         pistachio: '#D9FFB3',
@@ -18,7 +22,6 @@ module.exports = {
         eggshell: '#EBE9E2',
         eggshellDark: '#CECCC6',
         gray: '#8295BA',
-        logicolaPrimary: '#17a34a'
       },
     },
   },

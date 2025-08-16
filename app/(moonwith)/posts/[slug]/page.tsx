@@ -3,6 +3,7 @@ import { allPosts } from 'content-collections';
 import { MDXContent } from '@content-collections/mdx/react';
 import { Metadata } from 'next';
 import { Sidenote } from '@/components/moonwith/sidenote';
+import { TypographyH1 } from '@/components/moonwith/h1';
 
 interface PostProps {
   params: {
@@ -69,9 +70,8 @@ export default async function PostPage({
   }
 
   return (
-    <article className='py-6 prose dark:prose-invert dark:text-gray text-lg md:text-[1.2rem]'>
-      <h1 className='mb-2 text-primary dark:text-secondary'>{post.title}</h1>
-
+    <article className='py-6 prose dark:prose-invert  text-lg md:text-[1.2rem]'>
+      <TypographyH1 text={post.title} />
       <MDXContent code={post.body} />
     </article>
   );

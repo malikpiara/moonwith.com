@@ -1,5 +1,5 @@
-import '.././globals.css';
-import { Inter } from 'next/font/google';
+import { Instrument_Serif, Inter } from 'next/font/google';
+import '.././global.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Analytics } from '@/components/analytics';
 import { Header } from '@/components/moonwith/header';
@@ -7,7 +7,18 @@ import { Motto } from '@/components/moonwith/motto';
 import { Moon } from '@/components/moonwith/moon';
 import { LoadingScreen } from '@/components/moonwith/loadingScreen';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const instrument_serif = Instrument_Serif({
+  subsets: ['latin'],
+  variable: '--font-instrument-serif',
+  display: 'swap',
+  weight: '400',
+});
 
 export const metadata = {
   title: 'Moonwith',
@@ -38,7 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
       <body
-        className={`antialiased min-h-screen bg-secondary dark:bg-primary text-primary dark:text-gray ${inter.className}`}
+        className={`antialiased min-h-screen bg-secondary dark:bg-primary text-primary dark:text-[#EAECD7] ${inter.variable} ${instrument_serif.variable}`}
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <LoadingScreen />

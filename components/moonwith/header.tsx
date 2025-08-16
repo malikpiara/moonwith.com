@@ -68,7 +68,7 @@ export function Header() {
             onClick={toggleMenu}
             data-collapse-toggle='navbar-hamburger'
             type='button'
-            className='inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+            className='inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  dark:hover:bg-gray-700 dark:focus:ring-gray-600'
             aria-controls='navbar-hamburger'
             aria-expanded='false'
           >
@@ -113,16 +113,14 @@ export function Header() {
         </div>
       </nav>
 
-      <header className='max-sm:hidden flex w-full absolute left-0 top-2 flex-wrap justify-between text-primary dark:text-gray'>
+      <header className='max-sm:hidden flex w-full absolute left-0 top-2 flex-wrap justify-between text-primary dark:text-[#EAECD7]'>
         <div className='flex items-center'>
           <ModeToggle />
           <Link
             className='flex text-md p-2 transition-all duration-300 hover:opacity-100'
             href={'/'}
           >
-            <span className='font-semibold tracking-wide dark:text-gray flex'>
-              MOONWITH
-            </span>
+            <span className='font-semibold tracking-wide  flex'>MOONWITH</span>
           </Link>
         </div>
         <div className='flex items-center justify-between'>
