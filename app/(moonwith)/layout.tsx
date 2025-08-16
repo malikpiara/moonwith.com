@@ -24,6 +24,7 @@ export const metadata = {
   title: 'Moonwith',
   description: "Malik's Digital Home",
   themeColor: '#1F2115',
+  backgroundColor: '#1F2115',
   creator: 'Malik Piara',
   keywords: [
     'personal blog',
