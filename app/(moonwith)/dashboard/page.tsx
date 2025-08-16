@@ -45,7 +45,7 @@ export default function Dashboard() {
     <article className='py-6 prose dark:prose-invert'>
       <h1 className='text-primary dark:text-secondary italic'>Software</h1>
 
-      <div className='bg-white rounded-2xl p-5 dark:bg-primary'>
+      <div className='bg-white rounded-2xl p-5 dark:bg-eggshell/5'>
         <h2 className='text-primary  dark:text-secondary m-0'>Activity Map</h2>
         <p>
           Below you can see how many blog posts I have published in the last 30
@@ -56,7 +56,7 @@ export default function Dashboard() {
       </div>
 
       <Link className='no-underline  font-normal' href='https://logicola.org/'>
-        <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
+        <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-eggshell/5 hover:scale-105 transition-all'>
           <h2 className='text-primary  dark:text-secondary m-0'>Logicola 3</h2>
           <p>
             An e-learning platform to help college students learn formal and
@@ -70,7 +70,7 @@ export default function Dashboard() {
         className='no-underline  font-normal'
         href={'https://earnest.cards'}
       >
-        <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-primary hover:scale-105 transition-all'>
+        <div className='bg-white rounded-2xl p-5 mt-5 dark:bg-eggshell/5 hover:scale-105 transition-all'>
           <h2 className='text-primary  dark:text-secondary m-0'>
             Earnest Cards
           </h2>

@@ -15,7 +15,7 @@ export default function Home() {
     <div className='prose dark:prose-invert mt-6'>
       {posts.map((post) => (
         <article
-          className='hover:bg-eggshell rounded-xl transition-all duration-700 p-2 dark:hover:bg-primary'
+          className='hover:bg-eggshell rounded-xl transition-all duration-700 p-2 dark:hover:bg-eggshell/5'
           key={post._meta.path}
         >
           <Link className='no-underline' href={`/posts/${post.slug}`}>
@@ -23,9 +23,7 @@ export default function Home() {
               {post.title}
             </h2>
           </Link>
-          {post.description && (
-            <p className='dark:text-gray text-lg'>{post.description}</p>
-          )}
+          {post.description && <p className='text-lg'>{post.description}</p>}
         </article>
       ))}
     </div>

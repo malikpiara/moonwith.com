@@ -4,6 +4,7 @@ import { ModeToggle } from '../mode-toggle';
 import Image from 'next/image';
 import logo from '../../public/logomark.svg';
 import { useState } from 'react';
+import { Button } from '../ui/button';
 
 interface NavItem {
   label: string;
@@ -90,24 +91,28 @@ export function Header() {
             </svg>
           </button>
           {isDropdownVisible && (
-            <div className='w-full' id='navbar-hamburger'>
-              <ul className='flex flex-col font-medium mt-4 rounded-lg'>
+            <div
+              className='w-full h-screen self-center content-center text-center'
+              id='navbar-hamburger'
+            >
+              <div className='flex flex-col rounded-lg'>
                 {items.map((item: NavItem) => {
                   return (
-                    <li
+                    <Button
+                      asChild
                       key={item.label}
-                      className='block py-2 px-3 text-primary rounded hover:text-white hover:bg-primary dark:text-inherit dark:hover:text-white dark:hover:bg-blue-600'
+                      className=' text-4xl font-light bg-transparent py-2 px-3 text-primary rounded hover:text-white dark:text-inherit mb-5'
                     >
                       <Link
-                        className='transition-all duration-300 hover:opacity-100'
+                        className='transition-all duration-300 hover:opacity-100 w-full'
                         href={item.destination}
                       >
                         {item.label}
                       </Link>
-                    </li>
+                    </Button>
                   );
                 })}
-              </ul>
+              </div>
             </div>
           )}
         </div>

@@ -30,11 +30,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <article className='py-6 prose dark:prose-invert text-lg'>
       <h1 className='text-primary dark:text-secondary'>{page.title}</h1>
-      {page.description && (
-        <p className='text-xl text-primary dark:text-gray'>
-          {page.description}
-        </p>
-      )}
+      {page.description && <p className='text-xl '>{page.description}</p>}
       <hr />
       <MDXContent code={page.body} />
     </article>
