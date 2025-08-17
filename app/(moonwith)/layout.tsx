@@ -61,7 +61,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`antialiased min-h-screen bg-secondary dark:bg-primary text-primary dark:text-[#EAECD7] ${inter.variable} ${instrument_serif.variable}`}
       >
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
           <LoadingScreen />
           <div className='max-w-2xl mx-auto py-10 px-4'>
             <Header />
