@@ -22,6 +22,10 @@ export function Header() {
     { label: 'Work', destination: '/projects' },
     { label: 'Software', destination: '/dashboard' },
     { label: 'Get in Touch', destination: '/contact' },
+    {
+      label: 'Subscribe',
+      destination: 'https://malikpiara.substack.com/subscribe',
+    },
   ];
 
   const [isDropdownVisible, setDropdownVisible] = useState(false);

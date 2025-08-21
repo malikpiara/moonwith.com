@@ -4,6 +4,7 @@ import { MDXContent } from '@content-collections/mdx/react';
 import { Metadata } from 'next';
 import { Sidenote } from '@/components/moonwith/sidenote';
 import { TypographyH1 } from '@/components/moonwith/h1';
+import { NewsletterSignup } from './subscribeWidget';
 
 interface PostProps {
   params: {
@@ -74,6 +75,7 @@ export default async function PostPage({
     <article className='py-6 prose dark:prose-invert  text-lg md:text-[1.2rem]'>
       <TypographyH1 text={post.title} />
       <MDXContent code={post.body} />
+      <NewsletterSignup />
     </article>
   );
 }
