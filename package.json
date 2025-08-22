@@ -5,11 +5,15 @@
   "scripts": {
     "dev": "concurrently 'content-collections watch' next dev --turbo",
     "build": "content-collections build && next build",
-    "preview": "next build && next start",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.6.5",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/typography": "^0.5.12",
     "@types/node": "20.12.12",
@@ -41,6 +45,7 @@
     "@content-collections/core": "^0.4.1",
     "@content-collections/mdx": "^0.2.0",
     "@content-collections/next": "^0.2.0",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "wrangler": "^4.32.0"
   }
 }
