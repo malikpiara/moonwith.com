@@ -3,14 +3,13 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "concurrently 'content-collections watch' next dev --turbo",
-    "build": "content-collections build && next build",
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
-    "start": "next start",
-    "lint": "next lint"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@content-collections/cli": "0.1.2",
@@ -42,7 +41,8 @@
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "3.4.3",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "zod": "^4.0.17"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
