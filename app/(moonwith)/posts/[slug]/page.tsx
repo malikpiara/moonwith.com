@@ -7,17 +7,17 @@ import { TypographyH1 } from '@/components/moonwith/h1';
 import { NewsletterSignup } from './subscribeWidget';
 
 interface PostProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-async function getPostFromParams(params: PostProps['params']) {
-  const slug = params.slug;
-  const post = allPosts.find((post) => post.slug == params.slug);
+async function getPostFromParams(params: Promise<{ slug: string }>) {
+  const { slug } = await params;
+  const post = allPosts.find((post) => post.slug == slug);
 
   if (!post) {
-    null;
+    return null;
   }
 
   return post;
@@ -38,7 +38,7 @@ export async function generateMetadata({
     authors: [{ name: 'Malik Piara', url: 'https://moonwith.com/' }],
     keywords: ['Malik Piara', 'Moonwith', 'Emotional Intelligence'],
     creator: 'Malik Piara',
-    themeColor: '#1F2115',
+    metadataBase: new URL('https://moonwith.com'),
     openGraph: {
       images: [
         {
@@ -54,25 +54,22 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<PostProps['params'][]> {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return allPosts.map((post) => ({
     slug: post._meta.path,
   }));
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const post = allPosts.find((post) => post.slug == params.slug);
+export default async function PostPage({ params }: PostProps) {
+  const { slug } = await params;
+  const post = allPosts.find((post) => post.slug == slug);
 
   if (!post) {
     notFound();
   }
 
   return (
-    <article className='py-6 prose dark:prose-invert  text-lg md:text-[1.2rem]'>
+    <article className='py-6 prose dark:prose-invert text-lg md:text-[1.2rem]'>
       <TypographyH1 text={post.title} />
       <MDXContent code={post.body} />
       <NewsletterSignup />

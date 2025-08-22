@@ -3,25 +3,46 @@ import { Metadata } from 'next';
 import { allPages } from 'content-collections';
 import { MDXContent } from '@content-collections/mdx/react';
 
-/* interface PageProps {
-  params: {
-    slug: string;
-  };
-} */
+interface PageProps {
+  params: Promise<{
+    slug: string[];
+  }>;
+}
 
-/* async function getPageFromParams(params: PageProps['params']) {
-  const slug = params.slug;
-  const page = allPages.find((page) => page._meta.path === slug);
+async function getPageFromParams(params: Promise<{ slug: string[] }>) {
+  const { slug } = await params;
+  // Join the slug array to create the path (e.g., ['about'] becomes 'about')
+  const slugPath = slug.join('/');
+  const page = allPages.find((page) => page.slug === slugPath);
 
   if (!page) {
-    null;
+    return null;
   }
 
   return page;
-} */
+}
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const page = allPages.find((page) => page.slug == params.slug);
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const page = await getPageFromParams(params);
+
+  if (!page) {
+    return {};
+  }
+
+  return {
+    title: page.title,
+    description: page.description,
+    metadataBase: new URL('https://moonwith.com'),
+  };
+}
+
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
+  // Join the slug array to create the path
+  const slugPath = slug.join('/');
+  const page = allPages.find((page) => page.slug === slugPath);
 
   if (!page) {
     notFound();
