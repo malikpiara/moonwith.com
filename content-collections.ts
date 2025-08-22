@@ -28,7 +28,7 @@ const pages = defineCollection({
   name: 'pages',
   directory: 'content/pages',
   include: '**/*.md(x)?',
-  schema: (z) => ({
+  schema: z.object({
     title: z.string(),
     description: z.string(),
   }),
