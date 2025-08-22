@@ -5,15 +5,14 @@ import { MDXContent } from '@content-collections/mdx/react';
 
 interface PageProps {
   params: Promise<{
-    slug: string[];
+    slug: string;
   }>;
 }
 
-async function getPageFromParams(params: Promise<{ slug: string[] }>) {
+async function getPageFromParams(params: Promise<{ slug: string }>) {
   const { slug } = await params;
-  // Join the slug array to create the path (e.g., ['about'] becomes 'about')
-  const slugPath = slug.join('/');
-  const page = allPages.find((page) => page.slug === slugPath);
+
+  const page = allPages.find((page) => page.slug === slug);
 
   if (!page) {
     return null;
@@ -38,11 +37,15 @@ export async function generateMetadata({
   };
 }
 
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  return allPages.map((pages) => ({
+    slug: pages._meta.path,
+  }));
+}
+
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  // Join the slug array to create the path
-  const slugPath = slug.join('/');
-  const page = allPages.find((page) => page.slug === slugPath);
+  const page = allPages.find((page) => page.slug === slug);
 
   if (!page) {
     notFound();
