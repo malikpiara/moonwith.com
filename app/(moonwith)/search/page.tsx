@@ -1,34 +1,19 @@
 'use client';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { Key, useState } from 'react';
 import { allPosts } from 'content-collections';
 import Link from 'next/link';
-
-let mockPosts = [
-  {
-    title: "Don't use acronyms",
-  },
-  {
-    title: 'Turning 26 years-old',
-  },
-  {
-    title: 'Activity Map. A way to visualise and improve my writing frequency.',
-  },
-  {
-    title: 'A riff on the Agile Manifesto',
-  },
-  {
-    title: 'Show me your bad writing',
-  },
-];
 
 //I was thinking about using articles[i].title.match but I dropped it for .includes()
 function search(query: string, articles: any) {
   let search_results = [];
 
   for (let i: number = 0; i <= articles.length - 1; i++) {
-    if (articles[i].title.toLowerCase().includes(query.toLowerCase())) {
+    if (
+      articles[i].title.toLowerCase().includes(query.toLowerCase()) ||
+      articles[i].content.toLowerCase().includes(query.toLowerCase())
+    ) {
       search_results.push(articles[i]);
     }
   }
@@ -44,11 +29,8 @@ export default function SearchPage() {
     const formData = new FormData(e.currentTarget);
     const query = formData.get('search') as string;
     setQuery(query); // saving the user query on state.
-    //search(query, mockPosts); // running the search function with the user query.
     setResults(search(query, allPosts));
   }
-
-  console.log(allPosts);
 
   return (
     <>
@@ -62,13 +44,29 @@ export default function SearchPage() {
         </p>
         <div className='space-y-2'>
           {results.map((article) => {
+            let parts = article.title.split(query);
             return (
               <Link
                 key={article.title}
-                className='hover:bg-eggshell rounded-xl transition-all duration-700 p-2 dark:hover:bg-eggshell/5 flex'
+                className={`hover:bg-eggshell rounded-xl transition-all duration-700 p-2 dark:hover:bg-eggshell/5 flex flex-col font-semibold`}
                 href={`/posts/${article.slug}`}
               >
-                {article.title}
+                <span>
+                  {parts.map((part: any, index: number) => {
+                    return (
+                      <>
+                        {part}
+                        {index < parts.length - 1 && (
+                          <span className='bg-lime-300/30 w-fit'>{query}</span>
+                        )}
+                      </>
+                    );
+                  })}
+                </span>
+
+                <div className='font-normal'>
+                  {article.content.slice(0, 100)}
+                </div>
               </Link>
             );
           })}
