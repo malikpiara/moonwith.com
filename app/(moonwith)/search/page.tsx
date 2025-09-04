@@ -5,7 +5,6 @@ import { Key, useState } from 'react';
 import { allPosts } from 'content-collections';
 import Link from 'next/link';
 
-//I was thinking about using articles[i].title.match but I dropped it for .includes()
 function search(query: string, articles: any) {
   let search_results = [];
 
@@ -44,7 +43,7 @@ export default function SearchPage() {
         </p>
         <div className='space-y-2'>
           {results.map((article) => {
-            let parts = article.title.split(query);
+            let parts = article.title.split(new RegExp(query, 'i'));
             return (
               <Link
                 key={article.title}
@@ -65,7 +64,12 @@ export default function SearchPage() {
                 </span>
 
                 <div className='font-normal'>
-                  {article.content.slice(0, 100)}
+                  {article.content
+                    .slice(0, 150)
+                    .replace(
+                      `import {Sidenote} from '../components/moonwith/sidenote'`,
+                      ''
+                    )}
                 </div>
               </Link>
             );
