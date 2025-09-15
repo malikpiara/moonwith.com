@@ -30,7 +30,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.2.3",
+    "eslint-config-next": "15.5.3",
     "linkify-react": "^4.3.2",
     "lucide-react": "^0.539.0",
     "next": "15.4.6",
