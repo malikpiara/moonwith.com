@@ -16,7 +16,7 @@
     "@content-collections/core": "0.11.0",
     "@content-collections/mdx": "0.2.2",
     "@content-collections/next": "0.2.7",
-    "@opennextjs/cloudflare": "^1.6.5",
+    "@opennextjs/cloudflare": "^1.8.2",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/typography": "^0.5.12",
     "@types/node": "24.3.0",
