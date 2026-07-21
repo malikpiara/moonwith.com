@@ -22,7 +22,7 @@ const writingStreak = () => {
       elements.push(
         <Link
           key={i}
-          className='rounded bg-pistachio hover:bg-pistachioDark w-3 h-3 inline-flex px-4 mx-1 hover:scale-110 transition-all'
+          className='rounded bg-pistachio hover:bg-pistachio-dark w-3 h-3 inline-flex px-4 mx-1 hover:scale-110 transition-all'
           href={`/posts/${matchingPost.slug}`}
           title={matchingPost.slug}
         />
@@ -31,7 +31,7 @@ const writingStreak = () => {
       elements.push(
         <div
           key={i}
-          className='rounded bg-eggshell hover:bg-eggshellDark w-3 h-3 inline-flex px-4 mx-1 hover:scale-110 transition-all cursor-pointer'
+          className='rounded bg-eggshell hover:bg-eggshell-dark w-3 h-3 inline-flex px-4 mx-1 hover:scale-110 transition-all cursor-pointer'
           title={formattedDate}
         />
       );

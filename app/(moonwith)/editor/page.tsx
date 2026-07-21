@@ -1,13 +1,10 @@
 'use client';
-import { useState, useRef, FC } from 'react';
+import { useState, FC } from 'react';
 
 const Editor: FC = () => {
-  const editorRef = useRef<HTMLDivElement>(null);
-  const [, setRenderTrigger] = useState<{}>({});
+  const [content, setContent] = useState<string>('');
 
-  const forceUpdate = (): void => setRenderTrigger({});
-
-  const getContent = (): string => editorRef.current?.innerText || '';
+  const getContent = (): string => content;
 
   const countCharacters = (): number => getContent().length;
 
@@ -37,10 +34,10 @@ const Editor: FC = () => {
       <h1 className='text-primary dark:text-secondary italic'>Mercury</h1>
 
       <div
-        ref={editorRef}
-        className='rounded dark:bg-primary text-lg focus:outline-none'
+        className='rounded dark:bg-primary text-lg focus:outline-hidden'
         contentEditable
-        onInput={forceUpdate}
+        suppressContentEditableWarning
+        onInput={(e) => setContent(e.currentTarget.innerText || '')}
       />
 
       <div className='flex gap-2'>

@@ -37,7 +37,7 @@ export function Header() {
     <>
       <nav className='sm:hidden block w-full bottom-5 relative -mb-5'>
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0'>
-          <a
+          <Link
             href='/'
             className='flex items-center space-x-3 rtl:space-x-reverse'
           >
@@ -68,12 +68,12 @@ export function Header() {
               src={logo}
               width={140}
             />
-          </a>
+          </Link>
           <button
             onClick={toggleMenu}
             data-collapse-toggle='navbar-hamburger'
             type='button'
-            className='inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+            className='inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200  dark:hover:bg-gray-700 dark:focus:ring-gray-600'
             aria-controls='navbar-hamburger'
             aria-expanded='false'
           >

@@ -12,6 +12,7 @@ const posts = defineCollection({
     date: z.string(),
     published: z.boolean().optional().default(true),
     tags: z.array(z.string()).optional().default([]),
+    content: z.string(),
   }),
   transform: async (document, context) => {
     const body = await compileMDX(context, document);
@@ -31,6 +32,7 @@ const pages = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    content: z.string(),
   }),
   transform: async (document, context) => {
     const body = await compileMDX(context, document);
@@ -44,5 +46,5 @@ const pages = defineCollection({
 });
 
 export default defineConfig({
-  collections: [posts, pages],
+  content: [posts, pages],
 });

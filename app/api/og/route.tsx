@@ -54,9 +54,13 @@ export async function GET(request: Request) {
           flexDirection: 'column',
         }}
       >
+        {/* next/image can't render inside Satori's ImageResponse; a raw
+            <img> is required here. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           width='90'
           height='90'
+          alt=''
           src={`${baseUrl}/icon4.png`}
           style={{
             position: 'absolute',

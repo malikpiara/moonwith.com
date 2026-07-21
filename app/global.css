@@ -1,10 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
+/* Keep class-based dark mode (v4 defaults to prefers-color-scheme).
+   next-themes toggles the `.dark` class on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #1f2115;
+  --color-secondary: #fbf9f2;
+  --color-tertiary: #bcb5fa;
+  --color-pistachio: #d9ffb3;
+  --color-pistachio-dark: #c3e5a1;
+  --color-eggshell: #ebe9e2;
+  --color-eggshell-dark: #ceccc6;
+  --color-gray: #8295ba;
+}
+
+/* Fonts are injected as CSS variables by next/font on <body>.
+   `inline` resolves the variable at the utility's element. */
 @theme inline {
   --font-inter: var(--font-inter);
-  --font-instrumentSerif: var(---font-instrument-serif);
+  --font-instrument-serif: var(--font-instrument-serif);
 }
 
 body {
