@@ -8,7 +8,8 @@ import Link from 'next/link';
  */
 
 export default function Home() {
-  const posts = allPosts.sort((a, b) =>
+  // toSorted returns a new array — never mutate the shared `allPosts` import.
+  const posts = allPosts.toSorted((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
   return (

@@ -3,7 +3,10 @@ import Linkify from 'linkify-react';
 export function Sidenote({
   highlight = '',
   content = 'This is a sidenote.',
-}: any) {
+}: {
+  highlight?: string;
+  content?: string;
+}) {
   return (
     <>
       <span className='group inline'>

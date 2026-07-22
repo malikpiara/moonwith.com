@@ -1,3 +1,4 @@
+import { ViewTransition } from 'react';
 import { Instrument_Serif, Inter } from 'next/font/google';
 import '.././global.css';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -57,7 +58,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body
         className={`antialiased min-h-screen bg-secondary dark:bg-primary text-primary dark:text-[#EAECD7] ${inter.variable} ${instrument_serif.variable}`}
       >
@@ -65,7 +66,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <LoadingScreen />
           <div className='max-w-2xl mx-auto py-10 px-4'>
             <Header />
-            <main className='sm:mt-10'>{children}</main>
+            {/* Crossfade routed content on navigation; the header, motto and
+                moon sit outside so they stay anchored during the transition. */}
+            <ViewTransition default='page-crossfade'>
+              <main className='sm:mt-10'>{children}</main>
+            </ViewTransition>
           </div>
           <Motto />
           <Moon />

@@ -21,7 +21,7 @@ export function NewsletterSignup() {
   return (
     <>
       <div className='bg-[#6AB25E]/15 px-6 py-8 rounded-lg mt-10'>
-        <h4 className='m-0 mb-3 dark:text-[#FBF9F2]'>
+        <h4 className='m-0! mb-3! dark:text-[#FBF9F2]'>
           🌳 Grow with me. Every other day, I’ll send you a letter—personal,
           honest, and meant for you.
         </h4>

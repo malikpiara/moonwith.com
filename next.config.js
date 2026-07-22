@@ -2,9 +2,9 @@ const { withContentCollections } = require("@content-collections/next");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  typescript: {
-    ignoreBuildErrors: true,
+  reactStrictMode: true,
+  experimental: {
+    viewTransition: true,
   },
   async redirects() {
     return [

@@ -14,6 +14,8 @@
   --color-eggshell: #ebe9e2;
   --color-eggshell-dark: #ceccc6;
   --color-gray: #8295ba;
+  /* Heritage token from the previous moonwith design */
+  --color-iris: #715abb;
 }
 
 /* Fonts are injected as CSS variables by next/font on <body>.
@@ -25,4 +27,31 @@
 
 body {
   font-family: var(--font-inter);
+}
+
+/* Branded selection highlight, carried over from the previous design. */
+::selection {
+  background-color: rgb(113 90 187 / 0.4);
+}
+
+/* Page navigation crossfade — same feel as Almond: 280ms, ease-out-cubic.
+   The browser's default view-transition keyframes already fade old out and
+   new in; we only retime them. */
+::view-transition-old(.page-crossfade),
+::view-transition-new(.page-crossfade) {
+  animation-duration: 280ms;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+::view-transition-group(.page-crossfade) {
+  animation-duration: 280ms;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }
