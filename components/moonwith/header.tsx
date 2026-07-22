@@ -1,9 +1,11 @@
 'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ModeToggle } from '../mode-toggle';
 import Image from 'next/image';
 import logo from '../../public/logomark.svg';
-import { useState } from 'react';
+import logoDark from '../../public/logomark-dark.svg';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from '../ui/button';
 
 interface NavItem {
@@ -11,115 +13,154 @@ interface NavItem {
   destination: string;
 }
 
+const items: NavItem[] = [
+  { label: 'Home', destination: '/' },
+  { label: 'About', destination: '/about' },
+  { label: 'Work', destination: '/projects' },
+  { label: 'Software', destination: '/dashboard' },
+  { label: 'Get in Touch', destination: '/contact' },
+  {
+    label: 'Subscribe',
+    destination: 'https://malikpiara.substack.com/subscribe',
+  },
+];
+
 /**
  * This component displays a navbar for Moonwith's main website.
  * To add new items to the navigation, add the items to the items constant.
  */
 export function Header() {
-  const items: NavItem[] = [
-    { label: 'Home', destination: '/' },
-    { label: 'About', destination: '/about' },
-    { label: 'Work', destination: '/projects' },
-    { label: 'Software', destination: '/dashboard' },
-    { label: 'Get in Touch', destination: '/contact' },
-    {
-      label: 'Subscribe',
-      destination: 'https://malikpiara.substack.com/subscribe',
-    },
-  ];
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
 
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
+  // Close the menu on any route change, including browser back/forward
+  // (the header lives in the shared layout, so it survives navigations).
+  // State is adjusted during render — React re-renders immediately without
+  // committing the stale open state, unlike an effect.
+  const [lastPathname, setLastPathname] = useState(pathname);
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname);
+    setMenuOpen(false);
+  }
 
-  const toggleMenu = () => {
-    setDropdownVisible(!isDropdownVisible);
-  };
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    document.body.style.overflow = 'hidden';
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        toggleButtonRef.current?.focus();
+      }
+    };
+
+    // If the viewport grows past the `sm` breakpoint (e.g. phone rotates to
+    // landscape), the nav is display:none'd away — close so the scroll lock
+    // can't strand the page.
+    const desktopQuery = window.matchMedia('(min-width: 640px)');
+    const onDesktop = () => setMenuOpen(false);
+
+    document.addEventListener('keydown', onKeyDown);
+    desktopQuery.addEventListener('change', onDesktop);
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKeyDown);
+      desktopQuery.removeEventListener('change', onDesktop);
+    };
+  }, [isMenuOpen]);
+
   return (
     <>
       <nav className='sm:hidden block w-full bottom-5 relative -mb-5'>
-        <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0'>
-          <Link
-            href='/'
-            className='flex items-center space-x-3 rtl:space-x-reverse'
-          >
-            <svg
-              className='w-[28px] h-[28px] text-gray-800 dark:text-white m-auto hidden dark:block'
-              aria-hidden='true'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='#fbf9f2'
-              viewBox='0 0 18 20'
-            >
-              <path d='M17.8 13.75a1 1 0 0 0-.859-.5A7.488 7.488 0 0 1 10.52 2a1 1 0 0 0 0-.969A1.035 1.035 0 0 0 9.687.5h-.113a9.5 9.5 0 1 0 8.222 14.247 1 1 0 0 0 .004-.997Z' />
-            </svg>
-            <svg
-              className='w-[28px] h-[28px] text-gray-800 dark:text-white m-auto dark:hidden'
-              aria-hidden='true'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='#152644'
-              viewBox='0 0 18 20'
-            >
-              <path d='M17.8 13.75a1 1 0 0 0-.859-.5A7.488 7.488 0 0 1 10.52 2a1 1 0 0 0 0-.969A1.035 1.035 0 0 0 9.687.5h-.113a9.5 9.5 0 1 0 8.222 14.247 1 1 0 0 0 .004-.997Z' />
-            </svg>
-            <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white hidden dark:block'>
-              Moonwith
-            </span>
+        <div className='relative z-50 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0'>
+          <Link href='/' className='flex items-center'>
             <Image
               className='dark:hidden'
-              alt='logomark'
+              alt='Moonwith'
               src={logo}
+              width={140}
+            />
+            <Image
+              className='hidden dark:block'
+              alt='Moonwith'
+              src={logoDark}
               width={140}
             />
           </Link>
           <button
-            onClick={toggleMenu}
-            data-collapse-toggle='navbar-hamburger'
+            ref={toggleButtonRef}
+            onClick={() => setMenuOpen(!isMenuOpen)}
             type='button'
-            className='inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200  dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+            className='inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-primary dark:text-[#EAECD7] rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200  dark:hover:bg-gray-700 dark:focus:ring-gray-600'
             aria-controls='navbar-hamburger'
-            aria-expanded='false'
+            aria-expanded={isMenuOpen}
           >
-            <span className='sr-only'>Open main menu</span>
-            <svg
-              className='w-5 h-5'
-              aria-hidden='true'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 17 14'
-            >
-              <path
-                stroke='currentColor'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M1 1h15M1 7h15M1 13h15'
-              />
-            </svg>
+            <span className='sr-only'>
+              {isMenuOpen ? 'Close main menu' : 'Open main menu'}
+            </span>
+            {isMenuOpen ? (
+              <svg
+                className='w-5 h-5'
+                aria-hidden='true'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 14 14'
+              >
+                <path
+                  stroke='currentColor'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='m1 1 12 12M13 1 1 13'
+                />
+              </svg>
+            ) : (
+              <svg
+                className='w-5 h-5'
+                aria-hidden='true'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 17 14'
+              >
+                <path
+                  stroke='currentColor'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M1 1h15M1 7h15M1 13h15'
+                />
+              </svg>
+            )}
           </button>
-          {isDropdownVisible && (
-            <div
-              className='w-full h-screen self-center content-center text-center'
-              id='navbar-hamburger'
-            >
-              <div className='flex flex-col rounded-lg'>
-                {items.map((item: NavItem) => {
-                  return (
-                    <Button
-                      asChild
-                      key={item.label}
-                      className=' text-4xl font-light bg-transparent py-2 px-3 text-primary rounded hover:text-white dark:text-inherit mb-5'
-                    >
-                      <Link
-                        className='transition-all duration-300 hover:opacity-100 w-full'
-                        href={item.destination}
-                      >
-                        {item.label}
-                      </Link>
-                    </Button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
         </div>
+        {isMenuOpen && (
+          <div
+            className='fixed inset-0 z-40 flex flex-col justify-center text-center bg-secondary dark:bg-primary'
+            id='navbar-hamburger'
+          >
+            <div className='flex flex-col rounded-lg'>
+              {items.map((item: NavItem) => {
+                return (
+                  <Button
+                    asChild
+                    key={item.label}
+                    className=' text-4xl font-light bg-transparent py-2 px-3 text-primary rounded hover:text-white dark:text-inherit mb-5'
+                  >
+                    <Link
+                      className='transition-all duration-300 hover:opacity-100 w-full'
+                      href={item.destination}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </Button>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </nav>
 
       <header className='max-sm:hidden flex w-full absolute left-0 top-2 flex-wrap justify-between text-primary dark:text-[#EAECD7]'>

@@ -3,7 +3,12 @@ title: Moonwith is my digital home. Designed to amplify everything I stand for.
 description: From ideas worth spreading, to apps, projects, events and communities that foster connection, enable learning and create more access to opportunities.
 ---
 
-<div className='scale-[1.15] mt-12 mb-16'>![Image of me](/malik_bw.jpg)</div>
+{/* Bleed the photo ~15% past the text column (visually equivalent to the old
+    scale-[1.15]). Two constraints, both required for the page crossfade:
+    negative margins instead of `scale`, and an own view-transition-name so the
+    photo is snapshotted separately — Chrome aborts the whole transition
+    (InvalidStateError) when content paints outside the captured <main>. */}
+<div className='-mx-[7.5%] mt-12 mb-16 [view-transition-name:about-photo]'>![Image of me](/malik_bw.jpg)</div>
 
 I'm Malik. I was born in Lisboa and moved to Berlin where I studied product management, software engineering and interaction design at [CODE](https://code.berlin/en/) and [Hasso Plattner Institute/d-school](https://hpi.de/en/d-school/).
 

@@ -16,7 +16,7 @@ export default function Home() {
     <div className='prose dark:prose-invert mt-6'>
       {posts.map((post) => (
         <article
-          className='hover:bg-eggshell rounded-xl transition-all duration-700 p-2 dark:hover:bg-eggshell/5'
+          className='hover:bg-eggshell rounded-xl transition-all duration-700 p-2 -mx-2 dark:hover:bg-eggshell/5'
           key={post._meta.path}
         >
           <Link className='no-underline' href={`/posts/${post.slug}`}>
